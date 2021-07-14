@@ -1,0 +1,50 @@
+{
+  "name": "zombiciderpg",
+  "title": "Zombicide RPG : Chronicles",
+  "description": "Le jeu de plateau zombicide transformé en jeu de rôle.",
+  "version": "0.0.1",
+  "templateVersion": 2,
+  "author": "Michael Schneider",
+  "minimumCoreVersion": "0.8.4",
+  "compatibleCoreVersion": "0.8.8",
+  "esmodules": ["module/simple.js"],
+  "styles": ["styles/simple.css"],
+  "packs": [
+    {
+      "name": "zombipedia",
+      "label": "Zombipedia",
+      "path": "packs/zombipedia.db",
+      "entity": "Actor"
+    },
+    {
+      "name": "weapons",
+      "label": "Weapons",
+      "path": "packs/weapons.db",
+      "entity": "Item"
+    },
+    {
+      "name": "rules",
+      "label": "Rules",
+      "path": "./packs/rules.db",
+      "entity": "JournalEntry"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+	{
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+  ],
+  "gridDistance": 5,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power",
+  "url": "https://github.com/iMike-devNplay/zombiciderpg/",
+  "license": "LICENSE.txt"
+}
