@@ -8,22 +8,22 @@
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
             <div class="resource">
-                <input type="number" name="data.health.value" value="{{systemData.health.value}}"/>
+                <input type="number" name="data.derivedTraits.stress.value" value="{{systemData.derivedTraits.stress.value}}"/>
                 <span> / </span>
-                <input type="number" name="data.health.max" value="{{systemData.health.max}}"/>
+                <input type="number" name="data.derivedTraits.stress.max" value="{{systemData.derivedTraits.stress.max}}"/>
             </div>
             <div class="resource">
-                <input type="number" name="data.power.value" value="{{systemData.power.value}}"/>
+                <input type="number" name="data.derivedTraits.hitPoints.value" value="{{systemData.derivedTraits.hitPoints.value}}"/>
                 <span> / </span>
-                <input type="number" name="data.power.max" value="{{systemData.power.max}}"/>
+                <input type="number" name="data.derivedTraits.hitPoints.max" value="{{systemData.derivedTraits.hitPoints.max}}"/>
             </div>
         </div>
     </header>
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="items">Items</a>
+        <a class="item" data-tab="description">Bio</a>
+        <a class="item" data-tab="items">Weapons</a>
         <a class="item" data-tab="attributes">Attributes</a>
     </nav>
 
@@ -32,7 +32,7 @@
 
         {{!-- Biography Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
-            {{editor content=systemData.biography target="data.biography" button=true owner=owner editable=editable rollData=rollData}}
+            {{editor content=systemData.bio.occupation target="data.bio.occupation" button=true owner=owner editable=editable rollData=rollData}}
         </div>
 
         {{!-- Owned Items Tab --}}
@@ -99,11 +99,11 @@
             </header>
 
             {{!-- Render the attribute list partial. --}}
-            {{> "systems/worldbuilding/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
+            {{> "systems/zombiciderpg/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
 
             {{!-- Render the grouped attributes partial and control. --}}
             <div class="groups">
-                {{> "systems/worldbuilding/templates/parts/sheet-groups.html" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
+                {{> "systems/zombiciderpg/templates/parts/sheet-groups.html" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
 
                 <div class="group-controls flexrow">
                     <input class="group-prefix" type="text" value=""/>

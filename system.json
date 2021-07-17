@@ -43,8 +43,8 @@
   ],
   "gridDistance": 5,
   "gridUnits": "m",
-  "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power",
+  "primaryTokenAttribute": "derivedTraits.stress",
+  "secondaryTokenAttribute": "derivedTraits.hitPoints",
   "url": "https://github.com/iMike-devNplay/zombiciderpg/",
   "license": "LICENSE.txt"
 }
