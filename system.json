@@ -39,7 +39,7 @@
       "lang": "fr",
       "name": "Français",
       "path": "lang/fr.json"
-    },
+    }
   ],
   "gridDistance": 5,
   "gridUnits": "m",
