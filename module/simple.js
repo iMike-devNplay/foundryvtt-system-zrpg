@@ -9,7 +9,7 @@ import { SimpleItem } from "./item.js";
 import { SimpleItemSheet } from "./item-sheet.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
 import { preloadHandlebarsTemplates } from "./templates.js";
-import { createzombiciderpgMacro } from "./macro.js";
+import { createZombiciderpgMacro } from "./macro.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -98,7 +98,7 @@ Hooks.once("init", async function() {
 /**
  * Macrobar hook.
  */
-Hooks.on("hotbarDrop", (bar, data, slot) => createzombiciderpgMacro(data, slot));
+Hooks.on("hotbarDrop", (bar, data, slot) => createZombiciderpgMacro(data, slot));
 
 /**
  * Adds the actor template context menu.

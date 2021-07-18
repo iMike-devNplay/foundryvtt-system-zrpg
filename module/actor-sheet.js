@@ -1,6 +1,3 @@
-import { EntitySheetHelper } from "./helper.js";
-import {ATTRIBUTE_TYPES} from "./constants.js";
-
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -25,10 +22,8 @@ export class SimpleActorSheet extends ActorSheet {
   /** @inheritdoc */
   getData() {
     const context = super.getData();
-    EntitySheetHelper.getAttributeData(context.data);
     context.shorthand = !!game.settings.get("zombiciderpg", "macroShorthand");
     context.systemData = context.data.data;
-    context.dtypes = ATTRIBUTE_TYPES;
     return context;
   }
 
@@ -40,11 +35,6 @@ export class SimpleActorSheet extends ActorSheet {
 
     // Everything below here is only needed if the sheet is editable
     if ( !this.isEditable ) return;
-
-    // Attribute Management
-    html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
@@ -110,8 +100,6 @@ export class SimpleActorSheet extends ActorSheet {
   /** @inheritdoc */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    formData = EntitySheetHelper.updateAttributes(formData, this.object);
-    formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
   }
 }

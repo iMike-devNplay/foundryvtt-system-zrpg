@@ -1,79 +1,85 @@
+
 {
-"Actor": {
-  "types": ["survivor", "nps", "zombie"],
-  "zombie": {
-    "type": "",
-    "speed": 1,
-    "strength-hitPoints": 1,
-    "specialRules": ""
-  },
-  "nps":{
-    "hitPoints": 1,
-    "name": "",
-    "description": "",
-    "enemyLevel": 1
-  },
-  "survivor": {
-    "bio": {
+  "Actor": {
+    "types": ["survivor", "nps", "zombie"],
+    "templates": {},
+    "zombie": {
+      "type": "",
+      "speed": 1,
+      "strength-hitPoints": 1,
+      "specialRules": ""
+    },
+    "nps":{
+      "hitPoints": 1,
       "name": "",
-      "level": {
-        "value": 1,
-        "min": 1,
-        "max": 10
-      },
-      "occupation": "",
-      "habit": "",
-      "looks": ""
+      "description": "",
+      "enemyLevel": 1
     },
-    "attributes":{
-      "muscle":{
-        "value": 1,
-        "min": 1,
-        "max": 3
+    "survivor": {
+      "bio": {
+        "name": "",
+        "level": {
+          "value": 1,
+          "min": 1,
+          "max": 10
+        },
+        "occupation": "",
+        "habit": "",
+        "looks": ""
       },
-      "brains":{
-        "value": 1,
-        "min": 1,
-        "max": 3
+      "attributes":{
+        "muscle":{
+          "label": "Muscle",
+          "value": 1,
+          "min": 1,
+          "max": 3
+        },
+        "brains":{
+          "label": "Brains",
+          "value": 1,
+          "min": 1,
+          "max": 3
+        },
+        "grit":{
+          "label": "Grit",
+          "value": 1,
+          "min": 1,
+          "max": 3
+        }
       },
-      "grit":{
-        "value": 1,
-        "min": 1,
-        "max": 3
+      "derivedTraits":{
+        "stress":{
+          "value": 0,
+          "max": 0
+        },
+        "hitPoints":{
+          "value": 0,
+          "max": 0
+        }
+      },
+      "proficiencies": {},
+      "skillsBasic": {},
+      "skillsAdvanced": {},
+      "skillsMaster": {},
+      "skillsUltimate": {},
+      "actions": {},
+      "gear": {},
+      "weapons": {}
       }
     },
-    "derivedTraits":{
-      "stress":{
-        "value": 0,
-        "max": 0
-      },
-      "hitPoints":{
-        "value": 0,
-        "max": 0
-      }
-    },
-    "proficiencies": {},
-    "skillsBasic": {},
-    "skillsAdvanced": {},
-    "skillsMaster": {},
-    "skillsUltimate": {},
-    "actions": {},
-    "gear": {},
-    "weapons": {}
+  "Item": {
+    "types": ["weapon"],
+    "weapon": {
+      "type": "",
+      "range": "",
+      "dice": "",
+      "accuracy": "",
+      "damage": "",
+      "dual": false,
+      "trait1": "",
+      "trait2": "",
+      "description": ""
     }
-  },
-"Item": {
-  "types": ["weapon"],
-  "weapon": {
-    "type": "",
-    "range": "",
-    "dice": "",
-    "accuracy": "",
-    "damage": "",
-    "dual": false,
-    "trait1": "",
-    "trait2": "",
-    "description": ""
   }
 }
-}
+  

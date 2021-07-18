@@ -1,5 +1,3 @@
-import { EntitySheetHelper } from "./helper.js";
-
 /**
  * Extend the base Actor document to support attributes and groups with a custom template creation dialog.
  * @extends {Actor}
@@ -11,14 +9,40 @@ export class SimpleActor extends Actor {
     super.prepareDerivedData();
     this.data.data.groups = this.data.data.groups || {};
     this.data.data.attributes = this.data.data.attributes || {};
+    if (this.data.type === "survivor") 
+    {
+      this._applyModifiers.bind(this);
+      this._applyModifiers(this.data);
+    }
   }
+
+   /**
+   * Applies the modifers from all attributes on all associated items for an actor
+   *
+   * @param  {object} actorData
+   */
+    _applyModifiers(actorData) {
+      const data = actorData.data;
+      console.log(data);
+      console.log(data.derivedTraits);
+      console.log(data.attributes);
+
+      data.derivedTraits.stress.max = (data.attributes.brains.value + data.attributes.grit.value)*2;
+      data.derivedTraits.hitPoints.max = data.attributes.muscle.value + data.attributes.grit.value;
+
+      data.derivedTraits.stress.value = data.derivedTraits.stress.max;
+      data.derivedTraits.hitPoints.value = data.derivedTraits.hitPoints.max;
+    }
+
 
   /* -------------------------------------------- */
 
-  /** @override */
-  static async createDialog(data={}, options={}) {
-    return EntitySheetHelper.createDialog.call(this, data, options);
-  }
+  /* @override */
+  /*static async createDialog(data={}, options={}) {
+    console.log(data);
+    console.log(options);
+    return super.createDialog.call(data, options);
+  }*/
 
   /* -------------------------------------------- */
   /*  Roll Data Preparation                       */

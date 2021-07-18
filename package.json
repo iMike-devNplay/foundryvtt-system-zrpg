@@ -1,7 +1,7 @@
 {
-  "name": "worldbuilding",
+  "name": "zombiciderpfg",
   "version": "1.0.0",
-  "description": "CSS compiler for the Worldbuilding system",
+  "description": "CSS compiler for the Zombiciderpg system",
   "scripts": {
     "css": "gulp css",
     "watch": "gulp",

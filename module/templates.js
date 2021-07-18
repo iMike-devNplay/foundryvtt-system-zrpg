@@ -7,9 +7,6 @@ export const preloadHandlebarsTemplates = async function() {
 
   // Define template paths to load
   const templatePaths = [
-    // Attribute list partial.
-    "systems/zombiciderpg/templates/parts/sheet-attributes.html",
-    "systems/zombiciderpg/templates/parts/sheet-groups.html"
   ];
 
   // Load the template parts

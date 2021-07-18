@@ -8,14 +8,18 @@
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
             <div class="resource">
+                <span>Muscle :</span><input type="number" name="data.attributes.muscle.value" value="{{systemData.attributes.muscle.value}}"/>
+                <span>Brains :</span><input type="number" name="data.attributes.brains.value" value="{{systemData.attributes.brains.value}}"/>
+                <span>Grit :</span><input type="number" name="data.attributes.grit.value" value="{{systemData.attributes.grit.value}}"/>
+            </div>
+            <div class="resource">
                 <input type="number" name="data.derivedTraits.stress.value" value="{{systemData.derivedTraits.stress.value}}"/>
                 <span> / </span>
                 <input type="number" name="data.derivedTraits.stress.max" value="{{systemData.derivedTraits.stress.max}}"/>
-            </div>
-            <div class="resource">
                 <input type="number" name="data.derivedTraits.hitPoints.value" value="{{systemData.derivedTraits.hitPoints.value}}"/>
                 <span> / </span>
                 <input type="number" name="data.derivedTraits.hitPoints.max" value="{{systemData.derivedTraits.hitPoints.max}}"/>
+
             </div>
         </div>
     </header>
@@ -23,7 +27,7 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">Bio</a>
-        <a class="item" data-tab="items">Weapons</a>
+        <a class="item" data-tab="items">Armes</a>
         <a class="item" data-tab="attributes">Attributes</a>
     </nav>
 
@@ -86,30 +90,6 @@
             <p>
                 <a class="item-control" title="{{ localize "SIMPLE.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
             </p>
-        </div>
-
-        {{!-- Attributes Tab --}}
-        <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-key">{{localize "SIMPLE.AttributeKey"}}</span>
-                <span class="attribute-value">{{localize "SIMPLE.AttributeValue"}}</span>
-                <span class="attribute-label">{{localize "SIMPLE.AttributeLabel"}}</span>
-                <span class="attribute-dtype">{{localize "SIMPLE.AttributeDtype"}}</span>
-                <a class="attribute-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
-            </header>
-
-            {{!-- Render the attribute list partial. --}}
-            {{> "systems/zombiciderpg/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
-
-            {{!-- Render the grouped attributes partial and control. --}}
-            <div class="groups">
-                {{> "systems/zombiciderpg/templates/parts/sheet-groups.html" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
-
-                <div class="group-controls flexrow">
-                    <input class="group-prefix" type="text" value=""/>
-                    <a class="button group-control" data-action="create-group"><i class="fas fa-plus"></i>Add Attribute Group</a>
-                </div>
-            </div>
         </div>
     </section>
 </form>
