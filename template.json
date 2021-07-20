@@ -4,25 +4,42 @@
     "types": ["survivor", "nps", "zombie"],
     "templates": {},
     "zombie": {
-      "type": "",
+      "bio": {
+        "description": ""
+      },
       "speed": 1,
-      "strength-hitPoints": 1,
+      "strengthHitPoints": {
+        "value": 1,
+        "max": 1
+      },
+      "specialRules": "",
+      "rewardedXp": 1
+    },
+    "nps": {
+      "bio": {
+        "description": "",
+        "motivation": ""
+      },
+      "gear": "",
+      "enemyLevel": 1,
       "specialRules": ""
     },
-    "nps":{
-      "hitPoints": 1,
-      "name": "",
-      "description": "",
-      "enemyLevel": 1
-    },
     "survivor": {
+      "stress": {
+        "value": 0
+      },
+      "hitPoints": {
+        "value": 0
+      },
+      "level": {
+        "value": 1
+      },
+      "adrenaline": {
+        "value": 0,
+        "min": 0,
+        "max": 43
+      },
       "bio": {
-        "name": "",
-        "level": {
-          "value": 1,
-          "min": 1,
-          "max": 10
-        },
         "occupation": "",
         "habit": "",
         "looks": ""
@@ -30,45 +47,65 @@
       "attributes":{
         "muscle":{
           "label": "Muscle",
-          "value": 1,
+          "value": 0,
           "min": 1,
           "max": 3
         },
         "brains":{
           "label": "Brains",
-          "value": 1,
+          "value": 0,
           "min": 1,
           "max": 3
         },
         "grit":{
           "label": "Grit",
-          "value": 1,
+          "value": 0,
           "min": 1,
           "max": 3
         }
       },
-      "derivedTraits":{
-        "stress":{
+      "proficiencies": {
+        "athletics": {
+          "label": "Athletics",
           "value": 0,
-          "max": 0
+          "min": 1,
+          "max": 3
         },
-        "hitPoints":{
+        "attitude": {
+          "label": "Attitude",
           "value": 0,
-          "max": 0
+          "min": 1,
+          "max": 3
+        },
+        "background": {
+          "label": "Background",
+          "value": 0,
+          "min": 1,
+          "max": 3
+        },
+        "combat": {
+          "label": "Combat",
+          "value": 0,
+          "min": 1,
+          "max": 3
+        },
+        "perception": {
+          "label": "Perception",
+          "value": 0,
+          "min": 1,
+          "max": 3
+        },
+        "survival": {
+          "label": "Survival",
+          "value": 0,
+          "min": 1,
+          "max": 3
         }
-      },
-      "proficiencies": {},
-      "skillsBasic": {},
-      "skillsAdvanced": {},
-      "skillsMaster": {},
-      "skillsUltimate": {},
-      "actions": {},
-      "gear": {},
-      "weapons": {}
       }
-    },
+    }
+  },
   "Item": {
-    "types": ["weapon"],
+    "types": ["weapon", "action", "enemyLevel", "skill", "item"],
     "weapon": {
       "type": "",
       "range": "",
@@ -78,6 +115,22 @@
       "dual": false,
       "trait1": "",
       "trait2": "",
+      "description": ""
+    },
+    "action": {
+      "linkedAttr": "",
+      "linkedProf": ""
+    },
+    "enemyLevel": {
+      "resolve": "",
+      "speed": 0,
+      "strengthHitPoints": 0
+    },
+    "skill": {
+      "description": "",
+      "rank": 0
+    },
+    "item": {
       "description": ""
     }
   }

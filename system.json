@@ -7,8 +7,9 @@
   "author": "Michael Schneider",
   "minimumCoreVersion": "0.8.4",
   "compatibleCoreVersion": "0.8.8",
-  "esmodules": ["module/simple.js"],
-  "styles": ["styles/simple.css"],
+  "esmodules": ["module/zombiciderpg.mjs"],
+  "styles": ["styles/zombiciderpg.css"],
+  "scripts": [],
   "packs": [
     {
       "name": "zombipedia",
@@ -43,8 +44,8 @@
   ],
   "gridDistance": 5,
   "gridUnits": "m",
-  "primaryTokenAttribute": "derivedTraits.stress",
-  "secondaryTokenAttribute": "derivedTraits.hitPoints",
+  "primaryTokenAttribute": "stress",
+  "secondaryTokenAttribute": "hitPoints",
   "url": "https://github.com/iMike-devNplay/zombiciderpg/",
   "license": "LICENSE.txt"
 }
