@@ -13,7 +13,7 @@
         "max": 1
       },
       "specialRules": "",
-      "rewardedXp": 1
+      "rewardedXp": 0
     },
     "nps": {
       "bio": {
@@ -38,6 +38,9 @@
         "value": 0,
         "min": 0,
         "max": 43
+      },
+      "xp": {
+        "value": 0
       },
       "bio": {
         "occupation": "",
@@ -107,7 +110,7 @@
   "Item": {
     "types": ["weapon", "action", "enemyLevel", "skill", "item"],
     "weapon": {
-      "type": "",
+      "mode": "",
       "range": "",
       "dice": "",
       "accuracy": "",
@@ -119,12 +122,14 @@
     },
     "action": {
       "linkedAttr": "",
-      "linkedProf": ""
+      "linkedProf": "",
+      "description": ""
     },
     "enemyLevel": {
       "resolve": "",
       "speed": 0,
-      "strengthHitPoints": 0
+      "strengthHitPoints": 0,
+      "description": ""
     },
     "skill": {
       "description": "",

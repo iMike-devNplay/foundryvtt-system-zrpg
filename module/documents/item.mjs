@@ -4,8 +4,20 @@
  */
 export class ZombiciderpgItem extends Item {
 
+  prepareData(){
+    super.prepareData();
+
+    const itemData = this.data;
+    const actorData = this.actor ? this.actor.data : {};
+    const data = itemData.data;
+
+    console.log(data);
+  }
+
   /** @inheritdoc */
   prepareDerivedData() {
     super.prepareDerivedData();
+
+
   }
 }

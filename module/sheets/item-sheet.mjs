@@ -16,39 +16,36 @@ export class ZombiciderpgItemSheet extends ItemSheet {
     });
   }
 
+  /** @override */
+  get template() {
+    return `systems/zombiciderpg/templates/item/item-${this.item.data.type}-sheet.html`;
+  }
+
   /* -------------------------------------------- */
 
   /** @inheritdoc */
   getData() {
     const context = super.getData();
-    context.systemData = context.data.data;
+    context.data = context.data.data;
     return context;
   }
 
-  /* -------------------------------------------- */
+  /** @override */
+  setPosition(options = {}) {
+    const position = super.setPosition(options);
+    const sheetBody = this.element.find(".sheet-body");
+    const bodyHeight = position.height - 192;
+    sheetBody.css("height", bodyHeight);
+    return position;
+  }
 
-  /** @inheritdoc */
-	activateListeners(html) {
+  /** @override */
+  activateListeners(html) {
     super.activateListeners(html);
 
     // Everything below here is only needed if the sheet is editable
-    if ( !this.isEditable ) return;
+    if (!this.options.editable) return;
 
-    // Add draggable for Macro creation
-    html.find(".attributes a.attribute-roll").each((i, a) => {
-      a.setAttribute("draggable", true);
-      a.addEventListener("dragstart", ev => {
-        let dragData = ev.currentTarget.dataset;
-        ev.dataTransfer.setData('text/plain', JSON.stringify(dragData));
-      }, false);
-    });
-  }
-
-  /* -------------------------------------------- */
-
-  /** @override */
-  _getSubmitData(updateData) {
-    let formData = super._getSubmitData(updateData);
-    return formData;
+    // Roll handlers, click handlers, etc. would go here.
   }
 }
