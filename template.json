@@ -104,11 +104,133 @@
           "min": 1,
           "max": 3
         }
+      },
+      "actions": {
+        "stunt": {
+          "linkedAttr": "muscle",
+          "linkedProf": "athletics",
+          "preferred": false,
+          "description": ""  
+        },
+        "sneak": {
+          "linkedAttr": "brains",
+          "linkedProf": "athletics",
+          "preferred": false,
+          "description": ""  
+        },
+        "endure": {
+          "linkedAttr": "grit",
+          "linkedProf": "athletics",
+          "preferred": false,
+          "description": ""  
+        },
+        "appeal": {
+          "linkedAttr": "muscle",
+          "linkedProf": "attitude",
+          "preferred": false,
+          "description": ""  
+        },
+        "convince": {
+          "linkedAttr": "brains",
+          "linkedProf": "attitude",
+          "preferred": false,
+          "description": ""  
+        },
+        "hearten": {
+          "linkedAttr": "grit",
+          "linkedProf": "attitude",
+          "preferred": false,
+          "description": ""  
+        },
+        "security": {
+          "linkedAttr": "muscle",
+          "linkedProf": "background",
+          "preferred": false,
+          "description": ""  
+        },
+        "education": {
+          "linkedAttr": "brains",
+          "linkedProf": "background",
+          "preferred": false,
+          "description": ""  
+        },
+        "contacts": {
+          "linkedAttr": "grit",
+          "linkedProf": "background",
+          "preferred": false,
+          "description": ""  
+        },
+        "fight": {
+          "linkedAttr": "muscle",
+          "linkedProf": "combat",
+          "preferred": false,
+          "description": ""  
+        },
+        "shoot": {
+          "linkedAttr": "brains",
+          "linkedProf": "combat",
+          "preferred": false,
+          "description": ""  
+        },
+        "cool": {
+          "linkedAttr": "grit",
+          "linkedProf": "combat",
+          "preferred": false,
+          "description": ""  
+        },
+        "spot": {
+          "linkedAttr": "muscle",
+          "linkedProf": "perception",
+          "preferred": false,
+          "description": ""  
+        },
+        "evaluate": {
+          "linkedAttr": "brains",
+          "linkedProf": "perception",
+          "preferred": false,
+          "description": ""  
+        },
+        "scout": {
+          "linkedAttr": "grit",
+          "linkedProf": "perception",
+          "preferred": false,
+          "description": ""  
+        },
+        "scavenge": {
+          "linkedAttr": "muscle",
+          "linkedProf": "survival",
+          "preferred": false,
+          "description": ""  
+        },
+        "tinker": {
+          "linkedAttr": "brains",
+          "linkedProf": "survival",
+          "preferred": false,
+          "description": ""  
+        },
+        "heal": {
+          "linkedAttr": "grit",
+          "linkedProf": "survival",
+          "preferred": false,
+          "description": ""  
+        }
+      },
+      "readySlot": {
+        "slot1": "",
+        "slot2": ""
+      },
+      "holsterSlot": {
+        "slot1": "",
+        "slot2": ""
+      },
+      "backpackSlot": {
+        "slot1": "",
+        "slot2": ""
       }
     }
   },
   "Item": {
-    "types": ["weapon", "action", "enemyLevel", "skill", "item"],
+    "types": ["weapon", "enemyLevel", "skill", "item"],
     "weapon": {
       "mode": "",
       "range": "",
@@ -118,11 +240,6 @@
       "dual": false,
       "trait1": "",
       "trait2": "",
-      "description": ""
-    },
-    "action": {
-      "linkedAttr": "",
-      "linkedProf": "",
       "description": ""
     },
     "enemyLevel": {

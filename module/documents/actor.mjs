@@ -38,6 +38,7 @@ export class ZombiciderpgActor extends Actor {
     this._prepareSurvivorData(actorData);
     this._prepareNpsData(actorData);
     this._prepareZombieData(actorData);
+    console.log(data);
   }
 
   /**

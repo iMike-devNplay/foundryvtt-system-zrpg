@@ -11,7 +11,7 @@ export class ZombiciderpgActorSheet extends ActorSheet {
       template: "systems/zombiciderpg/templates/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "bio"}]
+      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "actions"}]
     });
   }
 
