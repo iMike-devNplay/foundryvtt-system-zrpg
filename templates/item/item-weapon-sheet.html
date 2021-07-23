@@ -6,7 +6,12 @@
         <div class="grid grid-2col">
           <div class="resource">
             <label class="resource-label">Type</label>
-            <input type="text" name="data.mode.value" value="{{data.mode.value}}" data-dtype="String"/>
+            <select class="selectvalue" name="data.mode.value" data-type="String">
+              {{#select data.mode.value}}
+              <option value="melee">Melee</option>
+              <option value="ranged">Ranged</option>
+              {{/select}}
+            </select>
           </div>
           <div class="resource">
             <label class="resource-label">Portée</label>
@@ -18,7 +23,16 @@
           </div>
           <div class="resource">
             <label class="resource-label">Précision</label>
-            <input type="text" name="data.accuracy.value" value="{{data.accuracy.value}}" data-dtype="String"/>
+            <select class="selectvalue" name="data.accuracy.value" data-type="String">
+              {{#select data.accuracy.value}}
+              <option value="1+">1+</option>
+              <option value="2+">2+</option>
+              <option value="3+">3+</option>
+              <option value="4+">4+</option>
+              <option value="5+">5+</option>
+              <option value="6+">6+</option>
+              {{/select}}
+            </select>
           </div>
           <div class="resource">
             <label class="resource-label">Dégâts</label>
@@ -30,11 +44,31 @@
           </div>
           <div class="resource">
             <label class="resource-label">Trait 1</label>
-            <input type="text" name="data.trait1.value" value="{{data.trait1.value}}"/>
+            <select class="selectvalue" name="data.trait1.value" data-type="String">
+              {{#select data.trait1.value}}
+              <option value="none">-</option>
+              <option value="door-opening-silent">Door-opening Silent</option>
+              <option value="door-opening-noisy">Door-opening Noisy</option>
+              <option value="silent">Silent</option>
+              <option value="noisy">Noisy</option>
+              <option value="reload">Reload</option>
+              <option value="sniper">Sniper</option>
+              {{/select}}
+            </select>
           </div>
           <div class="resource">
             <label class="resource-label">Trait 2</label>
-            <input type="text" name="data.trait2.value" value="{{data.trait2.value}}" data-dtype="String"/>
+            <select class="selectvalue" name="data.trait2.value" data-type="String">
+              {{#select data.trait2.value}}
+              <option value="none">-</option>
+              <option value="door-opening-silent">Door-opening Silent</option>
+              <option value="door-opening-noisy">Door-opening Noisy</option>
+              <option value="silent">Silent</option>
+              <option value="noisy">Noisy</option>
+              <option value="reload">Reload</option>
+              <option value="sniper">Sniper</option>
+              {{/select}}
+            </select>
           </div>
         </div>
       </div>
