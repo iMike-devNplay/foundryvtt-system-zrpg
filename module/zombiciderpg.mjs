@@ -56,3 +56,4 @@ Hooks.once("init", async function() {
 Hooks.once("ready", function() {
   // include steps that need to happen after Foundry has fully loaded here.
 });
+

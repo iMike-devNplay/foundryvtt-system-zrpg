@@ -5,6 +5,14 @@
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      <div class="attributes grid grid-3col">
+        <label for="data.xp" class="">XP</label>
+	<input type="text" name="data.xp" value="{{data.xp}}" data-dtype="Number"/>
+      </div>
+      <div class="attributes grid grid-3col">
+        <label for="data.adrenaline" class="">Adrenaline</label>
+	<input type="text" name="data.adrenaline" value="{{data.adrenaline}}" data-dtype="Number"/>
+      </div>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
@@ -70,17 +78,28 @@
     <a class="item" data-tab="bio">Biography</a>
     <a class="item" data-tab="actions">Actions</a>
     <a class="item" data-tab="proficiencies">Proficiencies</a>
-    <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="spells">Spells</a>
+    <a class="item" data-tab="skills">Skills</a>
     <a class="item" data-tab="effects">Effects</a>
+    <a class="item" data-tab="description">Description</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="bio">
-      {{editor content=data.bio target="data.bio" button=true owner=owner editable=editable}}
+      <div class="">
+        <label for="data.bio.looks" class="">Looks :</label>
+	<input type="text" name="data.bio.looks" value="{{data.bio.looks}}"/>
+      </div>
+      <div class="">
+        <label for="data.bio.habit" class="">Habit :</label>
+	<input type="text" name="data.bio.habit" value="{{data.bio.habit}}"/>
+      </div>
+      <div class="">
+        <label for="data.bio.occupation" class="">Occupation :</label>
+	<input type="text" name="data.bio.occupation" value="{{data.bio.occupation}}"/>
+      </div>
     </div>
 
     {{!-- Actions Tab --}}
@@ -90,13 +109,79 @@
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" clas11s where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
-          <div class="actions grid grid-3col">
-            {{#each data.actions as |action key|}}
-            <div class="action flexrow flex-group-center">
-              <label class="resource-label flexlarge align-left" data-label="{{key}}">=> {{key}}</label>
-              <input type="checkbox" name="data.actions.{{key}}.preferred" {{checked data.actions.key.preferred}}/>
-            </div>
-            {{/each}}
+          <div class="actions grid grid-3col" style="flex-wrap: nowrap">
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="stunt">Stunt</label>
+              <input type="checkbox" name="data.actions.stunt.preferred" {{checked data.actions.stunt.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="sneak">Sneak</label>
+              <input type="checkbox" name="data.actions.sneak.preferred" {{checked data.actions.sneak.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="endure">Endure</label>
+              <input type="checkbox" name="data.actions.endure.preferred" {{checked data.actions.endure.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="Appeal">Appeal</label>
+              <input type="checkbox" name="data.actions.appeal.preferred" {{checked data.actions.appeal.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="convince">Convince</label>
+              <input type="checkbox" name="data.actions.convince.preferred" {{checked data.actions.convince.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="hearten">Hearten</label>
+              <input type="checkbox" name="data.actions.hearten.preferred" {{checked data.actions.hearten.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="security">Security</label>
+              <input type="checkbox" name="data.actions.security.preferred" {{checked data.actions.security.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="education">Education</label>
+              <input type="checkbox" name="data.actions.education.preferred" {{checked data.actions.education.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="contacts">Contacts</label>
+              <input type="checkbox" name="data.actions.contacts.preferred" {{checked data.actions.contacts.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="fight">Fight</label>
+              <input type="checkbox" name="data.actions.fight.preferred" {{checked data.actions.fight.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="shoot">Shoot</label>
+              <input type="checkbox" name="data.actions.shoot.preferred" {{checked data.actions.shoot.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="cool">Cool</label>
+              <input type="checkbox" name="data.actions.cool.preferred" {{checked data.actions.cool.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="spot">Spot</label>
+              <input type="checkbox" name="data.actions.spot.preferred" {{checked data.actions.spot.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="evaluate">Evaluate</label>
+              <input type="checkbox" name="data.actions.evaluate.preferred" {{checked data.actions.evaluate.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="scout">Scout</label>
+              <input type="checkbox" name="data.actions.scout.preferred" {{checked data.actions.scout.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="scavenge">Scavenge</label>
+              <input type="checkbox" name="data.actions.scavenge.preferred" {{checked data.actions.scavenge.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="tinker">Tinker</label>
+              <input type="checkbox" name="data.actions.tinker.preferred" {{checked data.actions.tinker.preferred}} >
+	    </div>
+            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
+	      <label class="resource-label flexlarge align-left" data-label="heal">Heal</label>
+              <input type="checkbox" name="data.actions.heal.preferred" {{checked data.actions.heal.preferred}} >
+	    </div>
           </div>
         </aside>
       </section>
@@ -133,5 +218,9 @@
     <div class="tab effects flexcol" data-group="primary" data-tab="effects">
     </div>
 
+    {{!-- Description Tab --}}
+    <div class="tab desription flexcol" data-group="primary" data-tab="description">
+      {{editor content=data.bio.description target="data.bio.description" button=true owner=owner editable=editable}}
+    </div>
   </section>
 </form>
