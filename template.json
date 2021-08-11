@@ -111,112 +111,148 @@
       },
       "actions": {
         "stunt": {
+          "label": "Stunt",
           "linkedAttr": "muscle",
           "linkedProf": "athletics",
           "preferred": false,
           "description": ""  
         },
         "sneak": {
+          "label": "Sneak",
           "linkedAttr": "brains",
           "linkedProf": "athletics",
           "preferred": false,
           "description": ""  
         },
         "endure": {
+          "label": "Endure",
           "linkedAttr": "grit",
           "linkedProf": "athletics",
           "preferred": false,
           "description": ""  
         },
         "appeal": {
+          "label": "Appeal",
           "linkedAttr": "muscle",
           "linkedProf": "attitude",
           "preferred": false,
           "description": ""  
         },
         "convince": {
+          "label": "Convince",
           "linkedAttr": "brains",
           "linkedProf": "attitude",
           "preferred": false,
           "description": ""  
         },
         "hearten": {
+          "label": "Hearten",
           "linkedAttr": "grit",
           "linkedProf": "attitude",
           "preferred": false,
           "description": ""  
         },
         "security": {
+          "label": "Security",
           "linkedAttr": "muscle",
           "linkedProf": "background",
           "preferred": false,
           "description": ""  
         },
         "education": {
+          "label": "Education",
           "linkedAttr": "brains",
           "linkedProf": "background",
           "preferred": false,
           "description": ""  
         },
         "contacts": {
+          "label": "Contacts",
           "linkedAttr": "grit",
           "linkedProf": "background",
           "preferred": false,
           "description": ""  
         },
         "fight": {
+          "label": "Fight",
           "linkedAttr": "muscle",
           "linkedProf": "combat",
           "preferred": false,
           "description": ""  
         },
         "shoot": {
+          "label": "Shoot",
           "linkedAttr": "brains",
           "linkedProf": "combat",
           "preferred": false,
           "description": ""  
         },
         "cool": {
+          "label": "Cool",
           "linkedAttr": "grit",
           "linkedProf": "combat",
           "preferred": false,
           "description": ""  
         },
         "spot": {
+          "label": "Spot",
           "linkedAttr": "muscle",
           "linkedProf": "perception",
           "preferred": false,
           "description": ""  
         },
         "evaluate": {
+          "label": "Evaluate",
           "linkedAttr": "brains",
           "linkedProf": "perception",
           "preferred": false,
           "description": ""  
         },
         "scout": {
+          "label": "Scout",
           "linkedAttr": "grit",
           "linkedProf": "perception",
           "preferred": false,
           "description": ""  
         },
         "scavenge": {
+          "label": "Scavenge",
           "linkedAttr": "muscle",
           "linkedProf": "survival",
           "preferred": false,
           "description": ""  
         },
         "tinker": {
+          "label": "Tinker",
           "linkedAttr": "brains",
           "linkedProf": "survival",
           "preferred": false,
           "description": ""  
         },
         "heal": {
+          "label": "Heal",
           "linkedAttr": "grit",
           "linkedProf": "survival",
           "preferred": false,
           "description": ""  
+        }
+      },
+      "skills": {
+        "basicSkills": {
+          "slot1": ""
+        },
+        "advancedSkills": {
+          "slot1": "",
+          "slot2": ""
+        },
+        "masterSkills": {
+          "slot1": "",
+          "slot2": ""
+        },
+        "ultimateSkills": {
+          "slot1": "",
+          "slot2": "",
+          "slot3": ""
         }
       },
       "readySlot": {

@@ -13,7 +13,6 @@
         <label for="data.adrenaline.value" class="">Adrenaline</label>
 	<input type="text" name="data.adrenaline.value" value="{{data.adrenaline.value}}" data-dtype="Number"/>
 	<div class="progress">
-		{{data.adrenaline.value}}
 		<div class="progress-bar bg-info" role="progressbar" style="width: {{data.adrenaline.percentBlue}}%;" aria-valuenow="{{data.adrenaline.percentBlue}}" aria-valuemin="0" aria-valuemax="6"></div>
 		<div class="progress-bar" role="progressbar" style="width: {{data.adrenaline.percentYellow}}%;background-color: yellow;" aria-valuenow="{{data.adrenaline.percentYellow}}" aria-valuemin="0" aria-valuemax="11"></div>
 		<div class="progress-bar bg-warning" role="progressbar" style="width: {{data.adrenaline.percentOrange}}%;" aria-valuenow="{{data.adrenaline.percentOrange}}" aria-valuemin="0" aria-valuemax="23"></div>
@@ -117,78 +116,12 @@
           use both the "grid" and "grid-Ncol" clas11s where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
           <div class="actions grid grid-3col" style="flex-wrap: nowrap">
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="stunt">Stunt</label>
-              <input type="checkbox" name="data.actions.stunt.preferred" {{checked data.actions.stunt.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="sneak">Sneak</label>
-              <input type="checkbox" name="data.actions.sneak.preferred" {{checked data.actions.sneak.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="endure">Endure</label>
-              <input type="checkbox" name="data.actions.endure.preferred" {{checked data.actions.endure.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="Appeal">Appeal</label>
-              <input type="checkbox" name="data.actions.appeal.preferred" {{checked data.actions.appeal.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="convince">Convince</label>
-              <input type="checkbox" name="data.actions.convince.preferred" {{checked data.actions.convince.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="hearten">Hearten</label>
-              <input type="checkbox" name="data.actions.hearten.preferred" {{checked data.actions.hearten.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="security">Security</label>
-              <input type="checkbox" name="data.actions.security.preferred" {{checked data.actions.security.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="education">Education</label>
-              <input type="checkbox" name="data.actions.education.preferred" {{checked data.actions.education.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="contacts">Contacts</label>
-              <input type="checkbox" name="data.actions.contacts.preferred" {{checked data.actions.contacts.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="fight">Fight</label>
-              <input type="checkbox" name="data.actions.fight.preferred" {{checked data.actions.fight.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="shoot">Shoot</label>
-              <input type="checkbox" name="data.actions.shoot.preferred" {{checked data.actions.shoot.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="cool">Cool</label>
-              <input type="checkbox" name="data.actions.cool.preferred" {{checked data.actions.cool.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="spot">Spot</label>
-              <input type="checkbox" name="data.actions.spot.preferred" {{checked data.actions.spot.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="evaluate">Evaluate</label>
-              <input type="checkbox" name="data.actions.evaluate.preferred" {{checked data.actions.evaluate.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="scout">Scout</label>
-              <input type="checkbox" name="data.actions.scout.preferred" {{checked data.actions.scout.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="scavenge">Scavenge</label>
-              <input type="checkbox" name="data.actions.scavenge.preferred" {{checked data.actions.scavenge.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="tinker">Tinker</label>
-              <input type="checkbox" name="data.actions.tinker.preferred" {{checked data.actions.tinker.preferred}} >
-	    </div>
-            <div class="action flexrow flex-group-center" style="flex-wrap: nowrap">
-	      <label class="resource-label flexlarge align-left" data-label="heal">Heal</label>
-              <input type="checkbox" name="data.actions.heal.preferred" {{checked data.actions.heal.preferred}} >
-	    </div>
+            {{#each data.actions as |action key|}}
+            <div class="action flexrow flex-group-center">
+              <label for="data.actions.{{key}}.preferred" class="resource-label flexlarge align-left" data-label="{{action.label}}">{{action.label}}</label>
+              <input type="checkbox" name="data.actions.{{key}}.preferred" {{checked action.preferred}}/>
+            </div>
+            {{/each}}
           </div>
         </aside>
       </section>
@@ -219,6 +152,24 @@
 
     {{!-- Owned Skills Tab --}}
     <div class="tab skills" data-group="primary" data-tab="skills">
+      <section class="grid grid-4col">
+        <div class="skills">
+          <input type="text" name="data.skills.basicSkills.slot1" value="{{data.skills.basicSkills.slot1}}" data-dtype="String"/>
+        </div>
+        <div class="skills">
+          <input type="text" name="data.skills.advancedSkills.slot1" value="{{data.skills.advancedSkills.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.skills.advancedSkills.slot2" value="{{data.skills.advancedSkills.slot2}}" data-dtype="String"/>
+        </div>
+        <div class="skills">
+          <input type="text" name="data.skills.masterSkills.slot1" value="{{data.skills.masterSkills.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.skills.masterSkills.slot2" value="{{data.skills.masterSkills.slot2}}" data-dtype="String"/>
+        </div>
+        <div class="skills">
+          <input type="text" name="data.skills.ultimateSkills.slot1" value="{{data.skills.ultimateSkills.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.skills.ultimateSkills.slot2" value="{{data.skills.ultimateSkills.slot2}}" data-dtype="String"/>
+          <input type="text" name="data.skills.ultimateSkills.slot3" value="{{data.skills.ultimateSkills.slot3}}" data-dtype="String"/>
+        </div>
+      </section>
     </div>
 
     {{!-- Active Effects Tab --}}

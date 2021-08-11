@@ -106,5 +106,4 @@ export class ZombiciderpgActor extends Actor {
     // Make modifications to data here. For example:
     const data = actorData.data;
   }
-
 }

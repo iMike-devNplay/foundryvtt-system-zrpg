@@ -11,7 +11,7 @@ export class ZombiciderpgItem extends Item {
     const actorData = this.actor ? this.actor.data : {};
     const data = itemData.data;
 
-    console.log(data);
+    console.log(this.name + "=" + this.data);
   }
 
   /** @inheritdoc */
