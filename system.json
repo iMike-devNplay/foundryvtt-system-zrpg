@@ -7,8 +7,8 @@
   "author": "Michael Schneider",
   "minimumCoreVersion": "0.8.4",
   "compatibleCoreVersion": "0.8.8",
-  "esmodules": ["module/zombiciderpg.mjs"],
-  "styles": ["styles/zombiciderpg.css"],
+  "esmodules": ["module/zombiciderpg.mjs","module/helpers/bootstrap.bundle.min.js"],
+  "styles": ["styles/zombiciderpg.css","styles/bootstrap.min.css"],
   "scripts": [],
   "packs": [
     {

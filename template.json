@@ -37,7 +37,11 @@
       "adrenaline": {
         "value": 0,
         "min": 0,
-        "max": 43
+        "max": 43,
+        "percentBlue": 0,
+        "percentYellow": 0,
+        "percentOrange": 0,
+        "percentRed": 0
       },
       "xp": {
         "value": 0

@@ -6,12 +6,19 @@
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
       <div class="attributes grid grid-3col">
-        <label for="data.xp" class="">XP</label>
-	<input type="text" name="data.xp" value="{{data.xp}}" data-dtype="Number"/>
+        <label for="data.xp.value" class="">XP</label>
+	<input type="text" name="data.xp.value" value="{{data.xp.value}}" data-dtype="Number"/>
       </div>
       <div class="attributes grid grid-3col">
-        <label for="data.adrenaline" class="">Adrenaline</label>
-	<input type="text" name="data.adrenaline" value="{{data.adrenaline}}" data-dtype="Number"/>
+        <label for="data.adrenaline.value" class="">Adrenaline</label>
+	<input type="text" name="data.adrenaline.value" value="{{data.adrenaline.value}}" data-dtype="Number"/>
+	<div class="progress">
+		{{data.adrenaline.value}}
+		<div class="progress-bar bg-info" role="progressbar" style="width: {{data.adrenaline.percentBlue}}%;" aria-valuenow="{{data.adrenaline.percentBlue}}" aria-valuemin="0" aria-valuemax="6"></div>
+		<div class="progress-bar" role="progressbar" style="width: {{data.adrenaline.percentYellow}}%;background-color: yellow;" aria-valuenow="{{data.adrenaline.percentYellow}}" aria-valuemin="0" aria-valuemax="11"></div>
+		<div class="progress-bar bg-warning" role="progressbar" style="width: {{data.adrenaline.percentOrange}}%;" aria-valuenow="{{data.adrenaline.percentOrange}}" aria-valuemin="0" aria-valuemax="23"></div>
+		<div class="progress-bar bg-danger" role="progressbar" style="width: {{data.adrenaline.percentRed}}%;" aria-valuenow="{{data.adrenaline.percentRed}}" aria-valuemin="0" aria-valuemax="1"></div>
+	</div>
       </div>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
