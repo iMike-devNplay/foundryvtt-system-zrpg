@@ -60,40 +60,29 @@ export class ZombiciderpgActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-    const gear = [];
-    const actions = [];
-    const skills = {
-      0: [],
-      1: [],
-      2: [],
-      3: []
-    };
-
+    console.log(context.data.skills);
     // Iterate through items, allocating to containers
     for (let i of context.items) {
+      console.log(i);
       i.img = i.img || DEFAULT_TOKEN;
       // Append to gear.
       if (i.type === 'weapon' || i.type === 'item') {
-        gear.push(i);
+        //gear.push(i);
       }
       if (context.data.type === 'survivor'){
         // Append to actions.
         if (i.type === 'action') {
-          actions.push(i);
+          //actions.push(i);
         }
         // Append to skills.
         else if (i.type === 'skill') {
-          if (i.data.rank != undefined) {
-            skills[i.data.rank].push(i);
+          if (i.data.rank == 0) {
+            context.data.skills.basicSkills.slot1 = i;
           }
         }
       }
     }
-
-    // Assign and return
-    context.gear = gear;
-    context.actions = actions;
-    context.skills = skills;
+    console.log(context.data.skills);
   }
 
   /**
