@@ -24,6 +24,12 @@
       "entity": "Item"
     },
     {
+      "name": "skills",
+      "label": "Skills",
+      "path": "packs/skills.db",
+      "entity": "Item"
+    },
+    {
       "name": "rules",
       "label": "Rules",
       "path": "./packs/rules.db",
