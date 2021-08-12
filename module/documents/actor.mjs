@@ -38,7 +38,7 @@ export class ZombiciderpgActor extends Actor {
     this._prepareSurvivorData(actorData);
     this._prepareNpsData(actorData);
     this._prepareZombieData(actorData);
-    console.log(this);
+    console.log(data);
   }
 
   /**
@@ -53,6 +53,8 @@ export class ZombiciderpgActor extends Actor {
     /* Define Stress and HitPoints */
     data.stress.max = (data.attributes.brains.value + data.attributes.grit.value)*2;
     data.hitPoints.max = data.attributes.muscle.value + data.attributes.grit.value;
+
+    /* Define percentage for adrenaline bar */
     if (data.adrenaline.value <= 6)
     {
         data.adrenaline.percentBlue = data.adrenaline.value*100/6;

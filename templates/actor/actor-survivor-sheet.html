@@ -83,7 +83,6 @@
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="bio">Biography</a>
     <a class="item" data-tab="actions">Actions</a>
-    <a class="item" data-tab="proficiencies">Proficiencies</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="skills">Skills</a>
     <a class="item" data-tab="effects">Effects</a>
@@ -112,9 +111,17 @@
     <div class="tab actions" data-group="primary" data-tab="actions">
       <section class="grid grid-2col">
         <aside class="sidebar">
-          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-          use both the "grid" and "grid-Ncol" clas11s where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
+          <div class="proficiencies grid" style="flex-wrap: nowrap">
+            {{#each data.proficiencies as |proficiency key|}}
+            <div class="proficiency flexrow flex-group-center" style="width: 0%;"></div>
+            <div class="proficiency flexrow flex-group-center">
+              <label for="data.proficiencies.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{proficiency.label}}">{{proficiency.label}}</label>
+              <input type="text" name="data.proficiencies.{{key}}.value" value="{{proficiency.value}}" data-dtype="Number"/>
+            </div>
+            {{/each}}
+          </div>
+        </aside>
+        <aside class="sidebar">
           <div class="actions grid grid-3col" style="flex-wrap: nowrap">
             {{#each data.actions as |action key|}}
             <div class="action flexrow flex-group-center">
@@ -127,55 +134,58 @@
       </section>
     </div>
 
-    {{!-- Proficiencies Tab --}}
-    <div class="tab proficiencies" data-group="primary" data-tab="proficiencies">
-      <section class="grid grid-2col">
-        <aside class="sidebar">
-          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-          use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
-          <div class="proficiencies flexcol">
-            {{#each data.proficiencies as |proficiency key|}}
-            <div class="proficiency flexrow flex-group-center">
-              <label for="data.proficiencies.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{proficiency.label}}">{{proficiency.label}}</label>
-              <input type="text" name="data.proficiencies.{{key}}.value" value="{{proficiency.value}}" data-dtype="Number"/>
-            </div>
-            {{/each}}
-          </div>
-        </aside>
-      </section>
-    </div>
-
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
+      {{!-- Gear slots --}}
+      <section class="grid grid-3col">
+        {{!-- Ready slots --}}
+        <div class="gearslots">
+          <label class="resource-label flexlarge align-center">Ready Slot</label>
+          <input type="text" name="data.readySlot.slot1" value="{{data.readySlot.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.readySlot.slot2" value="{{data.readySlot.slot2}}" data-dtype="String"/>
+        </div>
+        {{!-- Holster slots --}}
+        <div class="gearslots">
+          <label class="resource-label flexlarge align-center">Holster Slot</label>
+          <input type="text" name="data.holsterSlot.slot1" value="{{data.holsterSlot.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.holsterSlot.slot2" value="{{data.holsterSlot.slot2}}" data-dtype="String"/>
+        </div>
+        {{!-- Backpack slots --}}
+        <div class="gearslots">
+          <label class="resource-label flexlarge align-center">Backpack Slot</label>
+          <input type="text" name="data.backpackSlot.slot1" value="{{data.backpackSlot.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.backpackSlot.slot2" value="{{data.backpackSlot.slot2}}" data-dtype="String"/>
+        </div>
+      </section>
+      <section class="grid grid-1col">
+        <div class="list-items">
+          {{#each actor.items as |item key|}}
+            <div class="item">
+              <label class="resource-label flexlarge align-left">{{item.name}}</label>
+            </div>
+          {{/each}}
+        </div>
+      </section>
     </div>
 
     {{!-- Owned Skills Tab --}}
     <div class="tab skills" data-group="primary" data-tab="skills">
       <section class="grid grid-4col">
         <div class="skills">
-          <select class="selectskill" name="data.skills.basicSkills.slot1" data-type="String">
-            {{#select data.skills.basicSkills.slot1}}
-              {{#each actor.data.items as |item key|}}
-                {{#if (item.data.data.rank.value == "0")}}
-                  <option value={{item.data}}>{{item.data.name}}</option>
-                {{#/if}}
-              {{/each}}
-            {{/select}}
-          </select>
+          <input type="text" name="data.skills.basicSkills.slot1" value="{{data.skills.basicSkills.slot1}}" data-dtype="String"/>
         </div>
         <div class="skills">
-          <input type="text" name="data.skills.advancedSkills.slot1" value="{{data.skills.advancedSkills.slot1.name}}" data-dtype="String"/>
-          <input type="text" name="data.skills.advancedSkills.slot2" value="{{data.skills.advancedSkills.slot2.name}}" data-dtype="String"/>
+          <input type="text" name="data.skills.advancedSkills.slot1" value="{{data.skills.advancedSkills.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.skills.advancedSkills.slot2" value="{{data.skills.advancedSkills.slot2}}" data-dtype="String"/>
         </div>
         <div class="skills">
-          <input type="text" name="data.skills.masterSkills.slot1" value="{{data.skills.masterSkills.slot1.name}}" data-dtype="String"/>
-          <input type="text" name="data.skills.masterSkills.slot2" value="{{data.skills.masterSkills.slot2.name}}" data-dtype="String"/>
+          <input type="text" name="data.skills.masterSkills.slot1" value="{{data.skills.masterSkills.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.skills.masterSkills.slot2" value="{{data.skills.masterSkills.slot2}}" data-dtype="String"/>
         </div>
         <div class="skills">
-          <input type="text" name="data.skills.ultimateSkills.slot1" value="{{data.skills.ultimateSkills.slot1.name}}" data-dtype="String"/>
-          <input type="text" name="data.skills.ultimateSkills.slot2" value="{{data.skills.ultimateSkills.slot2.name}}" data-dtype="String"/>
-          <input type="text" name="data.skills.ultimateSkills.slot3" value="{{data.skills.ultimateSkills.slot3.name}}" data-dtype="String"/>
+          <input type="text" name="data.skills.ultimateSkills.slot1" value="{{data.skills.ultimateSkills.slot1}}" data-dtype="String"/>
+          <input type="text" name="data.skills.ultimateSkills.slot2" value="{{data.skills.ultimateSkills.slot2}}" data-dtype="String"/>
+          <input type="text" name="data.skills.ultimateSkills.slot3" value="{{data.skills.ultimateSkills.slot3}}" data-dtype="String"/>
         </div>
       </section>
     </div>

@@ -9,8 +9,8 @@ export class ZombiciderpgActorSheet extends ActorSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["zombiciderpg", "sheet", "actor"],
       template: "systems/zombiciderpg/templates/actor-sheet.html",
-      width: 600,
-      height: 600,
+      width: 720,
+      height: 720,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "actions"}]
     });
   }
@@ -60,6 +60,10 @@ export class ZombiciderpgActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
+
+
+
+
 /*
     // Iterate through items, allocating to containers
     for (let i of context.items) {

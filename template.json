@@ -3,12 +3,174 @@
     "types": ["survivor", "nps", "zombie"],
     "templates": {
       "skills": {
+        "basic": {
+          "adrenalinejunkie": {
+            "label": "Adrenaline Junkie",
+            "description": ""
+          }, 
+          "bornleader": {
+            "label": "Born Leader",
+            "description": ""
+          },
+          "breakin": {
+            "label": "Break-In",
+            "description": ""
+          },
+          "destiny": {
+            "label": "Destiny",
+            "description": ""
+          },
+          "fieldmedic": {
+            "label": "Field Medic",
+            "description": ""
+          },
+          "hoard": {
+            "label": "Hoard",
+            "description": ""
+          },
+          "holdyournose": {
+            "label": "Hold Your Nose",
+            "description": ""
+          },
+          "lifesaver": {
+            "label": "Lifesaver",
+            "description": ""
+          },
+          "longshot": {
+            "label": "Longshot",
+            "description": ""
+          },
+          "lowprofile": {
+            "label": "Low Profile",
+            "description": ""
+          },
+          "pointblank": {
+            "label": "Point-Blank",
+            "description": ""
+          },
+          "scavenger": {
+            "label": "Scavenger",
+            "description": ""
+          },
+          "sliperry": {
+            "label": "Slippery",
+            "description": ""
+          },
+          "sniper": {
+            "label": "Sniper",
+            "description": ""
+          },
+          "steadyhand": {
+            "label": "Steady Hand",
+            "description": ""
+          },
+          "taunt": {
+            "label": "Taunt",
+            "description": ""
+          },
+          "tough": {
+            "label": "Tough",
+            "description": ""
+          }
+        },
+        "advanced": {
+          "combatreflexes": {
+            "label" : "Combat Reflexes",
+            "description" : ""
+          },
+          "dualexpert": {
+            "label" : "Dual Expert",
+            "description" : ""
+          },
+          "gunslinger": {
+            "label" : "Gunslinger",
+            "description" : ""
+          },
+          "hitandrun": {
+            "label" : "Hit &amp; Run",
+            "description" : ""
+          },
+          "improvisedweapon": {
+            "label" : "Improvised Weapon",
+            "description" : ""
+          },
+          "isthatallyouvegot": {
+            "label" : "Is That All You've Got?",
+            "description" : ""
+          },
+          "jump": {
+            "label" : "Jump",
+            "description" : ""
+          },
+          "lucky": {
+            "label" : "Lucky",
+            "description" : ""
+          },
+          "regeneration": {
+            "label" : "Regeneration",
+            "description" : ""
+          },
+          "shove": {
+            "label" : "Shove",
+            "description" : ""
+          },
+          "sidestep": {
+            "label" : "Sidestep",
+            "description" : ""
+          },
+          "slugger": {
+            "label" : "Slugger",
+            "description" : ""
+          },
+          "sprint": {
+            "label" : "Sprint",
+            "description" : ""
+          },
+          "swordmaster": {
+            "label" : "Swordmaster",
+            "description" : ""
+          }
+        },
+        "master": {
+          "ambidextrous": {
+            "label" : "Ambidextrous",
+            "description" : ""
+          },
+          "blitz": {
+            "label" : "Blitz",
+            "description" : ""
+          },
+          "bloodlust": {
+            "label" : "Bloodlust",
+            "description" : ""
+          },
+          "charge": {
+            "label" : "Charge",
+            "description" : ""
+          },
+          "dreadnought": {
+            "label" : "Dreadnought",
+            "description" : ""
+          },
+          "fast": {
+            "label" : "Fast",
+            "description" : ""
+          },
+          "precision": {
+            "label" : "Precision",
+            "description" : ""
+          },
+          "reaper": {
+            "label" : "Reaper",
+            "description" : ""
+          }
+        },
         "ultimate": {
-	  "barbarian": {
+	        "barbarian": {
             "label" : "Barbarian",
             "description" : ""
           },
-	  "brotherinarms": {
+	        "brotherinarms": {
             "label" : "Brother In Arms",
             "description" : ""
           },
