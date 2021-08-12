@@ -154,7 +154,15 @@
     <div class="tab skills" data-group="primary" data-tab="skills">
       <section class="grid grid-4col">
         <div class="skills">
-          <input type="text" name="data.skills.basicSkills.slot1" value="{{data.skills.basicSkills.slot1.name}}" data-dtype="String"/>
+          <select class="selectskill" name="data.skills.basicSkills.slot1" data-type="String">
+            {{#select data.skills.basicSkills.slot1}}
+              {{#each actor.data.items as |item key|}}
+                {{#if (item.data.data.rank.value == "0")}}
+                  <option value={{item.data}}>{{item.data.name}}</option>
+                {{#/if}}
+              {{/each}}
+            {{/select}}
+          </select>
         </div>
         <div class="skills">
           <input type="text" name="data.skills.advancedSkills.slot1" value="{{data.skills.advancedSkills.slot1.name}}" data-dtype="String"/>

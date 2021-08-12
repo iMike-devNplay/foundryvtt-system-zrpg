@@ -3,29 +3,196 @@
     "types": ["survivor", "nps", "zombie"],
     "templates": {
       "skills": {
+        "basic": {
+          {
+            "name": "Adrenaline Junkie",
+            "description": ""
+          }, 
+          {
+            "name": "Born Leader",
+            "description": ""
+          },
+          {
+            "name": "Break-In",
+            "description": ""
+          },
+          {
+            "name": "Destiny",
+            "description": ""
+          },
+          {
+            "name": "Field Medic",
+            "description": ""
+          },
+          {
+            "name": "Hoard",
+            "description": ""
+          },
+          {
+            "name": "Hold Your Nose",
+            "description": ""
+          },
+          {
+            "name": "Lifesaver",
+            "description": ""
+          },
+          {
+            "name": "Longshot",
+            "description": ""
+          },
+          {
+            "name": "",
+            "description": ""
+          },
+          {
+            "name": "Low Profile",
+            "description": ""
+          },
+          {
+            "name": "Point-Blank",
+            "description": ""
+          },
+          {
+            "name": "Scavenger",
+            "description": ""
+          },
+          {
+            "name": "Slippery",
+            "description": ""
+          },
+          {
+            "name": "Sniper",
+            "description": ""
+          },
+          {
+            "name": "Steady Hand",
+            "description": ""
+          },
+          {
+            "name": "Taunt",
+            "description": ""
+          },
+          {
+            "name": "Tough",
+            "description": ""
+          }
+        },
+        "advanced": {
+          {
+            "name" : "Combar Reflexes",
+            "description" : ""
+          },
+          {
+            "name" : "Dual Expert",
+            "description" : ""
+          },
+          {
+            "name" : "Gunslinger",
+            "description" : ""
+          },
+          {
+            "name" : "Hit &amp; Run",
+            "description" : ""
+          },
+          {
+            "name" : "Improvised Weapon",
+            "description" : ""
+          },
+          {
+            "name" : "Is That All You've Got?",
+            "description" : ""
+          },
+          {
+            "name" : "Jump",
+            "description" : ""
+          },
+          {
+            "name" : "Lucky",
+            "description" : ""
+          },
+          {
+            "name" : "Regeneration",
+            "description" : ""
+          },
+          {
+            "name" : "Shove",
+            "description" : ""
+          },
+          {
+            "name" : "Sidestep",
+            "description" : ""
+          },
+          {
+            "name" : "Slugger",
+            "description" : ""
+          },
+          {
+            "name" : "Sprint",
+            "description" : ""
+          },
+          {
+            "name" : "Swordmaster",
+            "description" : ""
+          }
+        },
+        "master": {
+          {
+            "name" : "Ambidextrous",
+            "description" : ""
+          },
+          {
+            "name" : "Blitz",
+            "description" : ""
+          },
+          {
+            "name" : "Bloodlust",
+            "description" : ""
+          },
+          {
+            "name" : "Charge",
+            "description" : ""
+          },
+          {
+            "name" : "Dreadnought",
+            "description" : ""
+          },
+          {
+            "name" : "Fast",
+            "description" : ""
+          },
+          {
+            "name" : "Precision",
+            "description" : ""
+          },
+          {
+            "name" : "Reaper",
+            "description" : ""
+          }
+
+        },
         "ultimate": {
-	  "barbarian": {
-            "label" : "Barbarian",
+          {
+            "name" : "Barbarian",
             "description" : ""
           },
-	  "brotherinarms": {
-            "label" : "Brother In Arms",
+          {
+            "name" : "Brother In Arms",
             "description" : ""
           },
-          "bullseye": {
-            "label" : "Bullseye",
+          {
+            "name" : "Bullseye",
             "description" : ""
           },
-          "fullauto": {
-            "label" : "Full Auto",
+          {
+            "name" : "Full Auto",
             "description" : ""
           },
-          "mindfulness": {
-            "label" : "Mindfulness",
+          {
+            "name" : "Mindfulness",
             "description" : ""
           },
-          "superstrength": {
-            "label" : "Super Strength",
+          {
+            "name" : "Super Strength",
             "description" : ""
           }
         }
