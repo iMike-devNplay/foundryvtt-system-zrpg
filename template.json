@@ -471,21 +471,26 @@
       "dual": false,
       "trait1": "",
       "trait2": "",
-      "description": ""
+      "description": "",
+      "isWeapon": true
     },
     "enemyLevel": {
       "resolve": "",
       "speed": 0,
       "strengthHitPoints": 0,
-      "description": ""
+      "description": "",
+      "isEnemyLevel": true
     },
     "skill": {
       "description": "",
       "rank": 0,
-      "assignedRank": 1
+      "assignedRank": "",
+      "isOwned": false,
+      "isSkill": true
     },
     "item": {
-      "description": ""
+      "description": "",
+      "isItem": true
     }
   }
 }

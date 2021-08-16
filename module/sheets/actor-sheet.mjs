@@ -47,7 +47,9 @@ export class ZombiciderpgActorSheet extends ActorSheet {
 
     // Prepare active effects
     //context.effects = prepareActiveEffectCategories(this.actor.effects);
+    console.log("<=== ZombiciderpgActorSheet.getData()")
     console.log(actorData);
+    console.log("===> ZombiciderpgActorSheet.getData()")
     return context;
   }
 
@@ -60,33 +62,36 @@ export class ZombiciderpgActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-
+    console.log("<=== ZombiciderpgActorSheet._prepareItems(context)")
     for (let i of context.items)
     {
+      console.log(i);
+      console.log(context);
       i.img = i.img || DEFAULT_TOKEN;
       if (context.actor.data.type == 'survivor') 
       {
         if (i.type == 'skill') 
         {
-          if (i.data.assignedRank.value == '0') 
+          if (i.data.assignedRank == "0") 
           {
             context.data.skills.basicSkills.slot1 = i;
           }
-          else if (i.data.assignedRank.value == '1') {
-            if (context.data.skills.advancedSkills.slot1 == undefined) context.data.skills.advancedSkills.slot1 = i;
+          else if (i.data.assignedRank == "1") {
+            if (!context.data.skills.advancedSkills.slot1) context.data.skills.advancedSkills.slot1 = i;
             else context.data.skills.advancedSkills.slot2 = i;
           }
-          else if (i.data.assignedRank.value == '2') {
-            if (context.data.skills.masterSkills.slot1 == undefined) context.data.skills.masterSkills.slot1 = i;
+          else if (i.data.assignedRank == "2") {
+            if (!context.data.skills.masterSkills.slot1) context.data.skills.masterSkills.slot1 = i;
             else context.data.skills.masterSkills.slot2 = i;
           }
-          else if (i.data.assignedRank.value == '3') {
-            if (context.data.skills.masterSkills.slot1 == undefined) context.data.skills.masterSkills.slot1 = i;
-            else if (context.data.skills.masterSkills.slot2 == undefined) context.data.skills.masterSkills.slot2 = i;
-            else context.data.skills.masterSkills.slot3 = i;
+          else if (i.data.assignedRank == "3") {
+            if (!context.data.skills.ultimateSkills.slot1) context.data.skills.ultimateSkills.slot1 = i;
+            else if (!context.data.skills.ultimateSkills.slot2) context.data.skills.ultimateSkills.slot2 = i;
+            else context.data.skills.ultimateSkills.slot3 = i;
           }
         }
       }
+      console.log("===> ZombiciderpgActorSheet._prepareItems(context)")
     }
 
 
@@ -144,6 +149,7 @@ export class ZombiciderpgActorSheet extends ActorSheet {
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
+      console.log(item);
       item.sheet.render(true);
     });
 
@@ -157,9 +163,12 @@ export class ZombiciderpgActorSheet extends ActorSheet {
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.items.get(li.data("itemId"));
+      //console.log("<=== activateListeners");
+      const itemId = li.data("itemId");
+      const item = this.actor.items.get(itemId);
       item.delete();
       li.slideUp(200, () => this.render(false));
+      //console.log("<=== activateListeners");
     });
   }
 
@@ -194,9 +203,46 @@ export class ZombiciderpgActorSheet extends ActorSheet {
   
   /** @override */
   async _onDropItemCreate(itemData) {
-    console.log("_onDropItemCreate");
-    console.log(itemData);
-
+    const actorSkills = this.actor.data.data.skills;
+    itemData.data.isOwned = true;
+    console.log(actorSkills);
+    // on assigne au premier rang libre en fonction du rang de la skill
+    if (itemData.data.rank == "0")
+    {
+      if (!actorSkills.basicSkills.slot1) itemData.data.assignedRank = "0";
+      else if (!actorSkills.advancedSkills.slot1) itemData.data.assignedRank = "1";
+      else if (!actorSkills.advancedSkills.slot2) itemData.data.assignedRank = "1";
+      else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+      else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+    }
+    if (itemData.data.rank == "1")
+    {
+      if (!actorSkills.advancedSkills.slot1) itemData.data.assignedRank = "1";
+      else if (!actorSkills.advancedSkills.slot2) itemData.data.assignedRank = "1";
+      else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+      else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+    }
+    if (itemData.data.rank == "2")
+    {
+      if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+      else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+    }
+    if (itemData.data.rank == "3")
+    {
+      if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+      else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+    }
+    //itemData.data.assignedRank = item.data.rank;
     return super._onDropItemCreate(itemData);
   }
 

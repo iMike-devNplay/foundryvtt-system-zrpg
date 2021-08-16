@@ -38,7 +38,9 @@ export class ZombiciderpgActor extends Actor {
     this._prepareSurvivorData(actorData);
     this._prepareNpsData(actorData);
     this._prepareZombieData(actorData);
+    console.log("<=== ZombiciderpgActor.prepareDerivedData()")
     console.log(data);
+    console.log("===> ZombiciderpgActor.prepareDerivedData()")
   }
 
   /**
