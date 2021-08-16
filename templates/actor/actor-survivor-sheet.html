@@ -188,6 +188,16 @@
           <input type="text" name="data.skills.ultimateSkills.slot3" value="{{data.skills.ultimateSkills.slot3}}" data-dtype="String"/>
         </div>
       </section>
+      <section class="grid grid-col2">
+        <ol class="item-list">
+          {{#each actor.items as |item key|}}
+            <li class="item flexrow" data-item-id="{{key}}">
+              <label class="resource-label flexlarge align-left">{{item.name}}</label>
+              <a class="item-control item-delete" title='Delete'><i class="fas fa-trash"></i></a>
+            </li>
+          </div>
+        {{/each}}
+      </section>
     </div>
 
     {{!-- Active Effects Tab --}}

@@ -47,7 +47,7 @@ export class ZombiciderpgActorSheet extends ActorSheet {
 
     // Prepare active effects
     //context.effects = prepareActiveEffectCategories(this.actor.effects);
-
+    console.log(actorData);
     return context;
   }
 
@@ -61,7 +61,33 @@ export class ZombiciderpgActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
 
-
+    for (let i of context.items)
+    {
+      i.img = i.img || DEFAULT_TOKEN;
+      if (context.actor.data.type == 'survivor') 
+      {
+        if (i.type == 'skill') 
+        {
+          if (i.data.assignedRank.value == '0') 
+          {
+            context.data.skills.basicSkills.slot1 = i;
+          }
+          else if (i.data.assignedRank.value == '1') {
+            if (context.data.skills.advancedSkills.slot1 == undefined) context.data.skills.advancedSkills.slot1 = i;
+            else context.data.skills.advancedSkills.slot2 = i;
+          }
+          else if (i.data.assignedRank.value == '2') {
+            if (context.data.skills.masterSkills.slot1 == undefined) context.data.skills.masterSkills.slot1 = i;
+            else context.data.skills.masterSkills.slot2 = i;
+          }
+          else if (i.data.assignedRank.value == '3') {
+            if (context.data.skills.masterSkills.slot1 == undefined) context.data.skills.masterSkills.slot1 = i;
+            else if (context.data.skills.masterSkills.slot2 == undefined) context.data.skills.masterSkills.slot2 = i;
+            else context.data.skills.masterSkills.slot3 = i;
+          }
+        }
+      }
+    }
 
 
 /*
@@ -164,5 +190,25 @@ export class ZombiciderpgActorSheet extends ActorSheet {
 
     // Finally, create the item!
     return await Item.create(itemData, {parent: this.actor});
-  }       
+  }  
+  
+  /** @override */
+  async _onDropItemCreate(itemData) {
+    console.log("_onDropItemCreate");
+    console.log(itemData);
+
+    return super._onDropItemCreate(itemData);
+  }
+
+  /**
+   * Handle deleting an existing Owned Item for the Actor
+   * @param {Event} event   The originating click event
+   * @private
+   */
+   _onItemDelete(event) {
+    event.preventDefault();
+    const li = event.currentTarget.closest(".item");
+    const item = this.actor.items.get(li.dataset.itemId);
+    if ( item ) return item.delete();
+  }
 }

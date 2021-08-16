@@ -481,7 +481,8 @@
     },
     "skill": {
       "description": "",
-      "rank": 0
+      "rank": 0,
+      "assignedRank": 1
     },
     "item": {
       "description": ""
