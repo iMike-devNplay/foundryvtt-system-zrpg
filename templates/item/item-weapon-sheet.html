@@ -70,6 +70,19 @@
               {{/select}}
             </select>
           </div>
+          {{#if data.isOwned}}
+            <div class="resource">
+              <label class="resource-label">Assigned Slot</label>
+              <select class="selectvalue" name="data.assignedSlot" data-type="String">
+                {{#select data.assignedSlot}}
+                <option value="none">-</option>
+                <option value="ready-slot">Ready</option>
+                <option value="holster-slot">Holster</option>
+                <option value="backpack-slot">Backpack</option>
+                {{/select}}
+              </select>
+            </div>
+          {{/if}}
         </div>
       </div>
     </header>

@@ -1,0 +1,23 @@
+<section class="grid grid-2col">
+    <aside class="sidebar">
+      <div class="proficiencies grid" style="flex-wrap: nowrap">
+        {{#each data.proficiencies as |proficiency key|}}
+        <div class="proficiency flexrow flex-group-center" style="width: 0%;"></div>
+        <div class="proficiency flexrow flex-group-center">
+          <label for="data.proficiencies.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{proficiency.label}}">{{proficiency.label}}</label>
+          <input type="text" name="data.proficiencies.{{key}}.value" value="{{proficiency.value}}" data-dtype="Number"/>
+        </div>
+        {{/each}}
+      </div>
+    </aside>
+    <aside class="sidebar">
+      <div class="actions grid grid-3col" style="flex-wrap: nowrap">
+        {{#each data.actions as |action key|}}
+        <div class="action flexrow flex-group-center">
+          <label for="data.actions.{{key}}.preferred" class="resource-label flexlarge align-left" data-label="{{action.label}}">{{action.label}}</label>
+          <input type="checkbox" name="data.actions.{{key}}.preferred" {{checked action.preferred}}/>
+        </div>
+        {{/each}}
+      </div>
+    </aside>
+  </section>

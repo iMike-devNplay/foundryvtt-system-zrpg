@@ -81,144 +81,44 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="bio">Biography</a>
     <a class="item" data-tab="actions">Actions</a>
-    <a class="item" data-tab="items">Items</a>
+    <a class="item" data-tab="bio">Biography</a>
+    <a class="item" data-tab="items">Equipments</a>
     <a class="item" data-tab="skills">Skills</a>
-    <a class="item" data-tab="effects">Effects</a>
     <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="configuration">Configuration</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="bio">
-      <div class="">
-        <label for="data.bio.looks" class="">Looks :</label>
-	<input type="text" name="data.bio.looks" value="{{data.bio.looks}}"/>
-      </div>
-      <div class="">
-        <label for="data.bio.habit" class="">Habit :</label>
-	<input type="text" name="data.bio.habit" value="{{data.bio.habit}}"/>
-      </div>
-      <div class="">
-        <label for="data.bio.occupation" class="">Occupation :</label>
-	<input type="text" name="data.bio.occupation" value="{{data.bio.occupation}}"/>
-      </div>
-    </div>
-
     {{!-- Actions Tab --}}
     <div class="tab actions" data-group="primary" data-tab="actions">
-      <section class="grid grid-2col">
-        <aside class="sidebar">
-          <div class="proficiencies grid" style="flex-wrap: nowrap">
-            {{#each data.proficiencies as |proficiency key|}}
-            <div class="proficiency flexrow flex-group-center" style="width: 0%;"></div>
-            <div class="proficiency flexrow flex-group-center">
-              <label for="data.proficiencies.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{proficiency.label}}">{{proficiency.label}}</label>
-              <input type="text" name="data.proficiencies.{{key}}.value" value="{{proficiency.value}}" data-dtype="Number"/>
-            </div>
-            {{/each}}
-          </div>
-        </aside>
-        <aside class="sidebar">
-          <div class="actions grid grid-3col" style="flex-wrap: nowrap">
-            {{#each data.actions as |action key|}}
-            <div class="action flexrow flex-group-center">
-              <label for="data.actions.{{key}}.preferred" class="resource-label flexlarge align-left" data-label="{{action.label}}">{{action.label}}</label>
-              <input type="checkbox" name="data.actions.{{key}}.preferred" {{checked action.preferred}}/>
-            </div>
-            {{/each}}
-          </div>
-        </aside>
-      </section>
+      {{> "systems/zombiciderpg/templates/actor/parts/actor-action-item.html" }}
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="bio">
+      {{> "systems/zombiciderpg/templates/actor/parts/actor-bio.html" }}
     </div>
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-      {{!-- Gear slots --}}
-      <section class="grid grid-3col">
-        {{!-- Ready slots --}}
-        <div class="gearslots">
-          <label class="resource-label flexlarge align-center">Ready Slot</label>
-          <input type="text" name="data.readySlot.slot1" value="{{data.readySlot.slot1}}" data-dtype="String"/>
-          <input type="text" name="data.readySlot.slot2" value="{{data.readySlot.slot2}}" data-dtype="String"/>
-        </div>
-        {{!-- Holster slots --}}
-        <div class="gearslots">
-          <label class="resource-label flexlarge align-center">Holster Slot</label>
-          <input type="text" name="data.holsterSlot.slot1" value="{{data.holsterSlot.slot1}}" data-dtype="String"/>
-          <input type="text" name="data.holsterSlot.slot2" value="{{data.holsterSlot.slot2}}" data-dtype="String"/>
-        </div>
-        {{!-- Backpack slots --}}
-        <div class="gearslots">
-          <label class="resource-label flexlarge align-center">Backpack Slot</label>
-          <input type="text" name="data.backpackSlot.slot1" value="{{data.backpackSlot.slot1}}" data-dtype="String"/>
-          <input type="text" name="data.backpackSlot.slot2" value="{{data.backpackSlot.slot2}}" data-dtype="String"/>
-        </div>
-      </section>
-      <section class="grid grid-1col">
-        <div class="list-items">
-          {{#each actor.items as |item key|}}
-            {{#if item.data.data.isWeapon}}
-              <div class="item">
-                <label class="resource-label flexlarge align-left">{{item.name}}</label>
-              </div>
-            {{/if}}
-            {{#if item.data.data.isItem}}
-            <div class="item">
-              <label class="resource-label flexlarge align-left">{{item.name}}</label>
-            </div>
-            {{/if}}
-          {{/each}}
-        </div>
-      </section>
+      {{> "systems/zombiciderpg/templates/actor/parts/actor-weapon-item.html" }}
     </div>
 
     {{!-- Owned Skills Tab --}}
     <div class="tab skills" data-group="primary" data-tab="skills">
-      <section class="grid grid-4col">
-        <div class="skills">
-          <input type="text" name="data.skills.basicSkills.slot1" value="{{data.skills.basicSkills.slot1.name}}" data-dtype="String"/>
-        </div>
-        <div class="skills">
-          <input type="text" name="data.skills.advancedSkills.slot1" value="{{data.skills.advancedSkills.slot1.name}}" data-dtype="String"/>
-          <input type="text" name="data.skills.advancedSkills.slot2" value="{{data.skills.advancedSkills.slot2.name}}" data-dtype="String"/>
-        </div>
-        <div class="skills">
-          <input type="text" name="data.skills.masterSkills.slot1" value="{{data.skills.masterSkills.slot1.name}}" data-dtype="String"/>
-          <input type="text" name="data.skills.masterSkills.slot2" value="{{data.skills.masterSkills.slot2.name}}" data-dtype="String"/>
-        </div>
-        <div class="skills">
-          <input type="text" name="data.skills.ultimateSkills.slot1" value="{{data.skills.ultimateSkills.slot1.name}}" data-dtype="String"/>
-          <input type="text" name="data.skills.ultimateSkills.slot2" value="{{data.skills.ultimateSkills.slot2.name}}" data-dtype="String"/>
-          <input type="text" name="data.skills.ultimateSkills.slot3" value="{{data.skills.ultimateSkills.slot3.name}}" data-dtype="String"/>
-        </div>
-      </section>
-      <section class="grid grid-col2">
-        <ol class="item-list">
-          {{#each actor.items as |item key|}}
-            {{#if item.data.data.isSkill}}
-              <li class="item flexrow" data-item-id="{{item.id}}">
-                <label class="resource-label flexlarge align-left">{{item.name}}</label>
-                <label class="resource-label flexlarge align-left">{{item.data.data.rank}}</label>
-                <label class="resource-label flexlarge align-left">{{item.data.data.assignedRank}}</label>
-                <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
-                <a class="item-control item-delete" title='Delete'><i class="fas fa-trash"></i></a>
-              </li>
-              {{/if}}
-          {{/each}}
-        </ol>
-      </section>
-    </div>
-
-    {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+      {{> "systems/zombiciderpg/templates/actor/parts/actor-skill-item.html" }}
     </div>
 
     {{!-- Description Tab --}}
     <div class="tab desription flexcol" data-group="primary" data-tab="description">
       {{editor content=data.bio.description target="data.bio.description" button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Configuration Tab --}}
+    <div class="tab configuration flexcol" data-group="primary" data-tab="configuration">
+      {{> "systems/zombiciderpg/templates/actor/parts/actor-config-item.html" }}
     </div>
   </section>
 </form>

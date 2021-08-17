@@ -1,0 +1,42 @@
+<section class="grid grid-2col">
+    <ol class="weapon-list">
+      {{#each actor.items as |item key|}}
+        {{#if item.data.data.isWeapon}}
+          <li class="item flexrow" data-item-id="{{item.id}}">
+              <label class="resource-label flexlarge align-left">{{item.name}}</label>
+              <label class="resource-label flexlarge align-left">{{item.data.data.assignedSlot}}</label>
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title='Delete'><i class="fas fa-trash"></i></a>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ol>
+    <ol class="item-list">
+      {{#each actor.items as |item key|}}
+        {{#if item.data.data.isItem}}
+          <li class="item flexrow" data-item-id="{{item.id}}">
+              <label class="resource-label flexlarge align-left">{{item.name}}</label>
+              <label class="resource-label flexlarge align-left">{{item.data.data.assignedSlot}}</label>
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title='Delete'><i class="fas fa-trash"></i></a>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ol>
+  </section>
+
+  <section class="grid grid-2col">
+    <ol class="item-list">
+    {{#each actor.items as |item key|}}
+        {{#if item.data.data.isSkill}}
+        <li class="item flexrow" data-item-id="{{item.id}}">
+            <label class="resource-label flexlarge align-left">{{item.name}}</label>
+            <label class="resource-label flexlarge align-left">{{item.data.data.rank}}</label>
+            <label class="resource-label flexlarge align-left">{{item.data.data.assignedRank}}</label>
+            <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+            <a class="item-control item-delete" title='Delete'><i class="fas fa-trash"></i></a>
+        </li>
+        {{/if}}
+    {{/each}}
+    </ol>
+</section>
