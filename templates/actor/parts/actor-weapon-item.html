@@ -1,21 +1,62 @@
 {{!-- Gear slots --}}
 <section class="grid grid-3col">
   {{!-- Ready slots --}}
-  <div class="gearslots">
-    <label class="resource-label flexlarge align-center">Ready Slot</label>
-    <input type="text" name="data.readySlot.slot1" value="{{data.readySlot.slot1.name}}" data-dtype="String"/>
-    <input type="text" name="data.readySlot.slot2" value="{{data.readySlot.slot2.name}}" data-dtype="String"/>
-  </div>
+  <ol class="items-list">
+    <li class="item flexrow" data-item-id="{{data.readySlot.slot1._id}}">
+        <div class="item-name flexrow">
+            <div class="item-image" style="background-image: url('{{data.readySlot.slot1.img}}')"></div>
+            <h4>
+                {{data.readySlot.slot1.name}}
+            </h4>
+        </div>
+    </li>
+    <li class="item flexrow" data-item-id="{{data.readySlot.slot2._id}}">
+        <div class="item-name flexrow">
+            <div class="item-image" style="background-image: url('{{data.readySlot.slot2.img}}')"></div>
+            <h4>
+                {{data.readySlot.slot2.name}}
+            </h4>
+        </div>
+    </li>
+  </ol>
+
   {{!-- Holster slots --}}
-  <div class="gearslots">
-    <label class="resource-label flexlarge align-center">Holster Slot</label>
-    <input type="text" name="data.holsterSlot.slot1" value="{{data.holsterSlot.slot1.name}}" data-dtype="String"/>
-    <input type="text" name="data.holsterSlot.slot2" value="{{data.holsterSlot.slot2.name}}" data-dtype="String"/>
-  </div>
+  <ol class="items-list">
+    <li class="item flexrow" data-item-id="{{data.holsterSlot.slot1._id}}">
+        <div class="item-name flexrow">
+            <div class="item-image" style="background-image: url('{{data.holsterSlot.slot1.img}}')"></div>
+            <h4>
+                {{data.holsterSlot.slot1.name}}
+            </h4>
+        </div>
+    </li>
+    <li class="item flexrow" data-item-id="{{data.holsterSlot.slot2._id}}">
+        <div class="item-name flexrow">
+            <div class="item-image" style="background-image: url('{{data.holsterSlot.slot2.img}}')"></div>
+            <h4>
+                {{data.holsterSlot.slot2.name}}
+            </h4>
+        </div>
+    </li>
+  </ol>
+
   {{!-- Backpack slots --}}
-  <div class="gearslots">
-    <label class="resource-label flexlarge align-center">Backpack Slot</label>
-    <input type="text" name="data.backpackSlot.slot1" value="{{data.backpackSlot.slot1.name}}" data-dtype="String"/>
-    <input type="text" name="data.backpackSlot.slot2" value="{{data.backpackSlot.slot2.name}}" data-dtype="String"/>
-  </div>
+  <ol class="items-list">
+    <li class="item flexrow" data-item-id="{{data.backpackSlot.slot1._id}}">
+        <div class="item-name flexrow">
+            <div class="item-image" style="background-image: url('{{data.backpackSlot.slot1.img}}')"></div>
+            <h4>
+                {{data.backpackSlot.slot1.name}}
+            </h4>
+        </div>
+    </li>
+    <li class="item flexrow" data-item-id="{{data.backpackSlot.slot2._id}}">
+        <div class="item-name flexrow">
+            <div class="item-image" style="background-image: url('{{data.backpackSlot.slot2.img}}')"></div>
+            <h4>
+                {{data.backpackSlot.slot2.name}}
+            </h4>
+        </div>
+    </li>
+  </ol>
 </section>

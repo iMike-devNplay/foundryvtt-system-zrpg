@@ -90,7 +90,7 @@ export class ZombiciderpgActorSheet extends ActorSheet {
             else context.data.skills.ultimateSkills.slot3 = i;
           }
         }
-        else if (i.type == 'weapon')
+        else if (i.type == 'weapon' || i.type == 'item')
         {
           if(i.data.assignedSlot == "ready-slot")
           {

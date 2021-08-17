@@ -11,13 +11,7 @@
       </div>
       <div class="attributes grid grid-3col">
         <label for="data.adrenaline.value" class="">Adrenaline</label>
-	<input type="text" name="data.adrenaline.value" value="{{data.adrenaline.value}}" data-dtype="Number"/>
-	<div class="progress">
-		<div class="progress-bar bg-info" role="progressbar" style="width: {{data.adrenaline.percentBlue}}%;" aria-valuenow="{{data.adrenaline.percentBlue}}" aria-valuemin="0" aria-valuemax="6"></div>
-		<div class="progress-bar" role="progressbar" style="width: {{data.adrenaline.percentYellow}}%;background-color: yellow;" aria-valuenow="{{data.adrenaline.percentYellow}}" aria-valuemin="0" aria-valuemax="11"></div>
-		<div class="progress-bar bg-warning" role="progressbar" style="width: {{data.adrenaline.percentOrange}}%;" aria-valuenow="{{data.adrenaline.percentOrange}}" aria-valuemin="0" aria-valuemax="23"></div>
-		<div class="progress-bar bg-danger" role="progressbar" style="width: {{data.adrenaline.percentRed}}%;" aria-valuenow="{{data.adrenaline.percentRed}}" aria-valuemin="0" aria-valuemax="1"></div>
-	</div>
+	      <input type="text" name="data.adrenaline.value" value="{{data.adrenaline.value}}" data-dtype="Number"/>
       </div>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
@@ -107,7 +101,7 @@
     </div>
 
     {{!-- Owned Skills Tab --}}
-    <div class="tab skills" data-group="primary" data-tab="skills">
+    <div class="tab skills flexcol" data-group="primary" data-tab="skills">
       {{> "systems/zombiciderpg/templates/actor/parts/actor-skill-item.html" }}
     </div>
 
