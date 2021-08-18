@@ -232,7 +232,8 @@
         "percentBlue": 0,
         "percentYellow": 0,
         "percentOrange": 0,
-        "percentRed": 0
+        "percentRed": 0,
+        "percentValue": 0
       },
       "xp": {
         "value": 0
@@ -485,7 +486,7 @@
     },
     "skill": {
       "description": "",
-      "rank": 0,
+      "rank": "basic",
       "assignedRank": "",
       "isOwned": false,
       "isSkill": true

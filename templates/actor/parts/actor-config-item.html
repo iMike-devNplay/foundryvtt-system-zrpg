@@ -1,8 +1,16 @@
 <ol class="items-list inventory-list">
       <li class="items-header flexrow">
           <h3 class="item-name flexrow">Weapons</h3>
-          <div class="item-detail">Assigned Slot</div>
-          <div class="item-detail">Actions</div>
+          <div class="weapon-type">Type</div>
+          <div class="weapon-range">Portée</div>
+          <div class="weapon-dice">Dé(s)</div>
+          <div class="weapon-accuracy">Précision</div>
+          <div class="weapon-damage">Dégâts</div>
+          <div class="weapon-dual">Dual</div>
+          <div class="weapon-trait">Trait 1</div>
+          <div class="weapon-trait">Trait 2</div>
+          <div class="weapon-assignedSlot">Assigned Slot</div>
+          <div class="item-controls flexrow" style="justify-content: center;">Actions</div>
       </li>
 
       <ol class="item-list">
@@ -15,7 +23,33 @@
                         {{item.name}}
                     </h4>
                 </div>
-                <div class="item-detail">
+                <div class="weapon-type">
+                  {{item.data.data.mode.value}}
+                </div>
+                <div class="weapon-range">
+                  {{item.data.data.range.value}}
+                </div>
+                <div class="weapon-dice">
+                  {{item.data.data.dice.value}}
+                </div>
+                <div class="weapon-accuracy">
+                  {{item.data.data.accuracy.value}}
+                </div>
+                <div class="weapon-damage">
+                  {{item.data.data.damage.value}}
+                </div>
+                <div class="weapon-dual">
+                  {{#if item.data.data.dual.value}}
+                    <i class="fas fa-check"></i>
+                  {{/if}}
+                </div>
+                <div class="weapon-trait">
+                  {{item.data.data.trait1.value}}
+                </div>
+                <div class="weapon-trait">
+                  {{item.data.data.trait2.value}}
+                </div>
+                <div class="weapon-assignedSlot">
                   {{item.data.data.assignedSlot}}
                 </div>
                 <div class="item-controls flexrow">
@@ -29,20 +63,20 @@
 
       <li class="items-header flexrow">
         <h3 class="item-name flexrow">Items</h3>
-        <div class="item-detail">Assigned Slot</div>
-        <div class="item-detail">Actions</div>
+        <div class="item-assignedSlot">Assigned Slot</div>
+        <div class="item-controls flexrow" style="justify-content: center;">Actions</div>
       </li>
       <ol class="item-list">
         {{#each actor.items as |item key|}}
           {{#if item.data.data.isItem}}
             <li class="item flexrow" data-item-id="{{item.id}}">
                 <div class="item-name flexrow">
-                    <div class="item-image" style="background-image: url('{{item.img}}')"></div>
+                  <div class="item-image" style="background-image: url('{{item.img}}')"></div>
                     <h4>
                         {{item.name}}
                     </h4>
                 </div>
-                <div class="item-detail">
+                <div class="item-assignedSlot">
                   {{item.data.data.assignedSlot}}
                 </div>
                 <div class="item-controls flexrow">
@@ -56,9 +90,9 @@
 
       <li class="items-header flexrow">
         <h3 class="item-name flexrow">Skills</h3>
-        <div class="item-detail">Rank</div>
-        <div class="item-detail">Assigned Rank</div>
-        <div class="item-detail">Action</div>
+        <div class="skill-rank">Rank</div>
+        <div class="skill-assignedRank">Assigned Rank</div>
+        <div class="item-controls flexrow" style="justify-content: center;">Action</div>
       </li>
       <ol class="item-list">
         {{#each actor.items as |item key|}}
@@ -70,10 +104,10 @@
                       {{item.name}}
                   </h4>
                 </div>
-                <div class="item-detail">
+                <div class="skill-rank">
                   {{item.data.data.rank}}
                 </div>
-                <div class="item-detail">
+                <div class="skill-assignedRank">
                   {{item.data.data.assignedRank}}
                 </div>
                 <div class="item-controls flexrow">

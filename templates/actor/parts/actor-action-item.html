@@ -1,16 +1,67 @@
+
 <section class="grid grid-2col">
-    <aside class="sidebar">
-      <div class="proficiencies grid" style="flex-wrap: nowrap">
+  <div class="blank"></div>
+  <div class="attributes">
+      <div class="attributes grid grid-3col">
+        <div class="attribute flex-group-center">
+          <label for="data.attributes.muscle.value" class="attribute-label">MUSCLE</label>
+          <div class="attribute-content flexrow flex-center flex-between">
+            <select class="selectvalue" name="data.attributes.muscle.value" style="text-align-last: center;" data-type="Number"> 
+              {{#select data.attributes.muscle.value}}
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              {{/select}}
+            </select>
+          </div>
+        </div>
+
+        <div class="attribute flex-group-center">
+          <label for="data.attributes.brains.value" class="attribute-label">BRAINS</label>
+          <div class="attribute-content flexrow flex-center flex-between">
+            <select class="selectvalue" name="data.attributes.brains.value" style="text-align-last: center;" data-type="Number"> 
+              {{#select data.attributes.brains.value}}
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              {{/select}}
+            </select>
+          </div>
+        </div>
+
+        <div class="attribute flex-group-center">
+          <label for="data.attributes.grit.value" class="attribute-label">GRIT</label>
+          <div class="attribute-content flexrow flex-center flex-between">
+            <select class="selectvalue" name="data.attributes.grit.value" style="text-align-last: center;" data-type="Number"> 
+              {{#select data.attributes.grit.value}}
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              {{/select}}
+            </select>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>      
+<section class="grid grid-2col">
+    <div class="proficiencies">
+      <div class="proficiencies grid grid-1col" style="flex-wrap: nowrap">
         {{#each data.proficiencies as |proficiency key|}}
-        <div class="proficiency flexrow flex-group-center" style="width: 0%;"></div>
         <div class="proficiency flexrow flex-group-center">
           <label for="data.proficiencies.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{proficiency.label}}">{{proficiency.label}}</label>
-          <input type="text" name="data.proficiencies.{{key}}.value" value="{{proficiency.value}}" data-dtype="Number"/>
+          <select class="selectvalue" name="data.proficiencies.{{key}}.value" style="text-align-last: center;" data-type="Number"> 
+            {{#select proficiency.value}}
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            {{/select}}
+          </select>
         </div>
         {{/each}}
       </div>
-    </aside>
-    <aside class="sidebar">
+    </div>
+    <div class="actions">
       <div class="actions grid grid-3col" style="flex-wrap: nowrap">
         {{#each data.actions as |action key|}}
         <div class="action flexrow flex-group-center">
@@ -19,5 +70,5 @@
         </div>
         {{/each}}
       </div>
-    </aside>
-  </section>
+    </div>
+</section>

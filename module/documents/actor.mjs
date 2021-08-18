@@ -50,42 +50,14 @@ export class ZombiciderpgActor extends Actor {
     const data = actorData.data;
 
     /* Define Stress and HitPoints */
-    data.stress.max = (data.attributes.brains.value + data.attributes.grit.value)*2;
-    data.hitPoints.max = data.attributes.muscle.value + data.attributes.grit.value;
+    data.stress.max = (data.attributes.brains.value*1 + data.attributes.grit.value*1)*2;
+    data.hitPoints.max = (data.attributes.muscle.value*1 + data.attributes.grit.value*1)*1;
 
-    /* Define percentage for adrenaline bar */
-    if (data.adrenaline.value <= 6)
-    {
-        data.adrenaline.percentBlue = data.adrenaline.value*100/6;
-        data.adrenaline.percentYellow = 0;
-        data.adrenaline.percentOrange = 0;
-        data.adrenaline.percentRed = 0;
-    }
-    else if (data.adrenaline.value >= 7 && data.adrenaline.value <= 18)
-    {
-        data.adrenaline.percentBlue = 100;
-        data.adrenaline.percentYellow = (data.adrenaline.value-7)*100/11;
-        data.adrenaline.percentOrange = 0;
-        data.adrenaline.percentRed = 0;
-    }
-    else if (data.adrenaline.value >= 19 && data.adrenaline.value <= 42)
-    {
-        data.adrenaline.percentBlue = 100;
-        data.adrenaline.percentYellow = 100;
-        data.adrenaline.percentOrange = (data.adrenaline.value-19)*100/23;
-        data.adrenaline.percentRed = 0;
-    }
-    else if (data.adrenaline.value >= 43)
-    {
-        data.adrenaline.percentBlue = 100;
-        data.adrenaline.percentYellow = 100;
-        data.adrenaline.percentOrange = 100;
-        data.adrenaline.percentRed = 100;
-    }
-    /* Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(data.abilities)) {
-      ability.mod = Math.floor((ability.value - 10) / 2);
-    }*/
+    data.adrenaline.percentValue = (data.adrenaline.value-0.5)*100/43;
+    data.adrenaline.percentBlue = 6*100/43;
+    data.adrenaline.percentYellow = 18*100/43;
+    data.adrenaline.percentOrange = 42*100/43;
+    data.adrenaline.percentRed = 100;
   }
 
   /**

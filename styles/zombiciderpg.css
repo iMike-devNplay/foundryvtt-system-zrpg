@@ -11,6 +11,15 @@
 }
 
 .grid,
+.grid-1col {
+  display: grid;
+  grid-column: span 1 / span 1;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
 .grid-2col {
   display: grid;
   grid-column: span 2 / span 2;
@@ -460,4 +469,131 @@
 
 .zombiciderpg .effects .item .effect-controls {
   border: none;
+}
+
+.zombiciderpg .sheet-header .xpbar {
+  flex: 0 0 8px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: #7a7971;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.zombiciderpg .sheet-header .xpbar .bar {
+  height: 4px;
+  margin: 1px;
+  display: block;
+  background: #afebff;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.zombiciderpg .weapon-type,
+.zombiciderpg .weapon-range,
+.zombiciderpg .weapon-dice,
+.zombiciderpg .weapon-accuracy,
+.zombiciderpg .weapon-damage,
+.zombiciderpg .weapon-dual,
+.zombiciderpg .weapon-trait,
+.zombiciderpg .skill-rank,
+.zombiciderpg .skill-assignedRank{
+  flex: 0 0 50px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+}
+
+.zombiciderpg .weapon-assignedSlot,
+.zombiciderpg .item-assignedSlot{
+  flex: 0 0 70px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+}
+
+.zombiciderpg .item-action {
+  flex: 0 0 50px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+}
+
+/* Encumbrance Bar */
+.encumbrance {
+  flex: 0 0 12px;
+  background: #7a7971;
+  margin: 1px 15px 0 1px;
+  border: 1px solid #191813;
+  border-radius: 3px;
+  position: relative;
+}
+.encumbrance .encumbrance-bar-blue {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: #b5b9e4;
+  height: 15px;
+  border: 1px solid #cde4ff;
+  border-radius: 2px;
+}
+.encumbrance .encumbrance-bar-yellow {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: #e7e3a1;
+  height: 15px;
+  border: 1px solid #cde4ff;
+  border-radius: 2px;
+}
+.encumbrance .encumbrance-bar-orange {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: #eec962;
+  height: 15px;
+  border: 1px solid #cde4ff;
+  border-radius: 2px;
+}
+.encumbrance .encumbrance-bar-red {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: #e95b5b;
+  height: 15px;
+  border: 1px solid #cde4ff;
+  border-radius: 2px;
+}
+.encumbrance .encumbrance-bar-black {
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  background: black;
+  height: 5px;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+.encumbrance .encumbrance-label {
+  height: 10px;
+  padding: 0 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 13px;
+  line-height: 12px;
+  text-align: right;
+  color: #EEE;
+  text-shadow: 0 0 5px #000;
+}
+.encumbrance .encumbrance-breakpoint {
+  display: block;
+  position: absolute;
+}
+.encumbrance .mark {
+  border-left: 2px solid rgb(0, 0, 0);
+  border-right: 2px solid rgb(0, 0, 0);
+  border-bottom: 8px solid rgb(0, 0, 0);
+  border-top: 8px solid rgb(0, 0, 0);
 }

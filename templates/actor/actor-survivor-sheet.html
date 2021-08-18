@@ -1,18 +1,29 @@
 <form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
 
   {{!-- Sheet Header --}}
-  <header class="sheet-header">
+  <header class="sheet-header" style="align-items: start;">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
       <div class="attributes grid grid-3col">
         <label for="data.xp.value" class="">XP</label>
-	<input type="text" name="data.xp.value" value="{{data.xp.value}}" data-dtype="Number"/>
+	      <input type="text" name="data.xp.value" value="{{data.xp.value}}" data-dtype="Number"/>
       </div>
       <div class="attributes grid grid-3col">
         <label for="data.adrenaline.value" class="">Adrenaline</label>
 	      <input type="text" name="data.adrenaline.value" value="{{data.adrenaline.value}}" data-dtype="Number"/>
       </div>
+      {{#with data.adrenaline}}
+        <div class="encumbrance">
+            <span class="encumbrance-bar-red" style="width:{{percentRed}}%; position: relative;"></span>
+            <span class="encumbrance-bar-red" style="width:{{percentRed}}%"></span>
+            <span class="encumbrance-bar-orange" style="width:{{percentOrange}}%"></span>
+            <span class="encumbrance-bar-yellow" style="width:{{percentYellow}}%"></span>
+            <span class="encumbrance-bar-blue" style="width:{{percentBlue}}%"></span>
+            <span class="encumbrance-bar-black" style="width:{{percentValue}}%"></span>
+         </div>
+      {{/with}}
+
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
@@ -26,7 +37,7 @@
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.stress.value" value="{{data.stress.value}}" data-dtype="Number"/>
           <span> / </span>
-          <input type="text" name="data.stress.max" value="{{data.stress.max}}" data-dtype="Number" enabled="false"/>
+          <input type="text" name="data.stress.max" value="{{data.stress.max}}" data-dtype="Number" disabled/>
           </div>
         </div>
 
@@ -35,7 +46,7 @@
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.hitPoints.value" value="{{data.hitPoints.value}}" data-dtype="Number"/>
           <span> / </span>
-          <input type="text" name="data.hitPoints.max" value="{{data.hitPoints.max}}" data-dtype="Number" enabled="false"/>
+          <input type="text" name="data.hitPoints.max" value="{{data.hitPoints.max}}" data-dtype="Number" disabled/>
           </div>
         </div>
 
@@ -43,29 +54,6 @@
           <label for="data.level.value" class="resource-label">Level</label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.level.value" value="{{data.level.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-      </div>
-      <div class="attributes grid grid-3col">
-        <div class="attribute flex-group-center">
-          <label for="data.attributes.muscle.value" class="attribute-label">MUSCLE</label>
-          <div class="attribute-content flexrow flex-center flex-between">
-          <input type="text" name="data.attributes.muscle.value" value="{{data.attributes.muscle.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        <div class="attribute flex-group-center">
-          <label for="data.attributes.brains.value" class="attribute-label">BRAINS</label>
-          <div class="attribute-content flexrow flex-center flex-between">
-          <input type="text" name="data.attributes.brains.value" value="{{data.attributes.brains.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        <div class="attribute flex-group-center">
-          <label for="data.attributes.grit.value" class="attribute-label">GRIT</label>
-          <div class="attribute-content flexrow flex-center flex-between">
-          <input type="text" name="data.attributes.grit.value" value="{{data.attributes.grit.value}}" data-dtype="Number"/>
           </div>
         </div>
       </div>

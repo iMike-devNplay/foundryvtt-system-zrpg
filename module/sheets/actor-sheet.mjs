@@ -10,7 +10,7 @@ export class ZombiciderpgActorSheet extends ActorSheet {
       classes: ["zombiciderpg", "sheet", "actor"],
       template: "systems/zombiciderpg/templates/actor-sheet.html",
       width: 720,
-      height: 720,
+      height: 750,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "actions"}]
     });
   }
@@ -72,19 +72,19 @@ export class ZombiciderpgActorSheet extends ActorSheet {
       {
         if (i.type == 'skill') 
         {
-          if (i.data.assignedRank == "0") 
+          if (i.data.assignedRank == 'basic') 
           {
             context.data.skills.basicSkills.slot1 = i;
           }
-          else if (i.data.assignedRank == "1") {
+          else if (i.data.assignedRank == 'advanced') {
             if (!context.data.skills.advancedSkills.slot1) context.data.skills.advancedSkills.slot1 = i;
             else context.data.skills.advancedSkills.slot2 = i;
           }
-          else if (i.data.assignedRank == "2") {
+          else if (i.data.assignedRank == 'master') {
             if (!context.data.skills.masterSkills.slot1) context.data.skills.masterSkills.slot1 = i;
             else context.data.skills.masterSkills.slot2 = i;
           }
-          else if (i.data.assignedRank == "3") {
+          else if (i.data.assignedRank == 'ultimate') {
             if (!context.data.skills.ultimateSkills.slot1) context.data.skills.ultimateSkills.slot1 = i;
             else if (!context.data.skills.ultimateSkills.slot2) context.data.skills.ultimateSkills.slot2 = i;
             else context.data.skills.ultimateSkills.slot3 = i;
@@ -200,49 +200,49 @@ export class ZombiciderpgActorSheet extends ActorSheet {
       const actorSkills = this.actor.data.data.skills;
       console.log(actorSkills);
       // on assigne au premier rang libre en fonction du rang de la skill
-      if (itemData.data.rank == "0")
+      if (itemData.data.rank == 'basic')
       {
-        if (!actorSkills.basicSkills.slot1) itemData.data.assignedRank = "0";
-        else if (!actorSkills.advancedSkills.slot1) itemData.data.assignedRank = "1";
-        else if (!actorSkills.advancedSkills.slot2) itemData.data.assignedRank = "1";
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+        if (!actorSkills.basicSkills.slot1) itemData.data.assignedRank = 'basic';
+        else if (!actorSkills.advancedSkills.slot1) itemData.data.assignedRank = 'advanced';
+        else if (!actorSkills.advancedSkills.slot2) itemData.data.assignedRank = 'advanced';
+        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
+        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
       }
-      if (itemData.data.rank == "1")
+      if (itemData.data.rank == 'advanced')
       {
-        if (!actorSkills.advancedSkills.slot1) itemData.data.assignedRank = "1";
-        else if (!actorSkills.advancedSkills.slot2) itemData.data.assignedRank = "1";
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+        if (!actorSkills.advancedSkills.slot1) itemData.data.assignedRank = 'advanced';
+        else if (!actorSkills.advancedSkills.slot2) itemData.data.assignedRank = 'advanced';
+        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
+        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
       }
-      if (itemData.data.rank == "2")
+      if (itemData.data.rank == 'master')
       {
-        if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = "2";
+        if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
+        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
         else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
       }
-      if (itemData.data.rank == "3")
+      if (itemData.data.rank == 'ultimate')
       {
-        if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
+        if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = 'ultimate';
+        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = 'ultimate';
+        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = 'ultimate';
       }
     }
 
     /* Weapon management */
-    if (itemData.type == "weapon")
+    if (itemData.type == 'weapon')
     {}
 
     /* Item management */
-    if (itemData.type == "item")
+    if (itemData.type == 'item')
     {}
 
     //itemData.data.assignedRank = item.data.rank;
