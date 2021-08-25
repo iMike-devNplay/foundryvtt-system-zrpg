@@ -62,11 +62,23 @@ export class ZombiciderpgActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-    console.log("<=== ZombiciderpgActorSheet._prepareItems(context)")
+    context.data.skills.basicSkills.slot1 = undefined;
+    context.data.skills.advancedSkills.slot1 = undefined;
+    context.data.skills.advancedSkills.slot2 =undefined;
+    context.data.skills.masterSkills.slot1 = undefined;
+    context.data.skills.masterSkills.slot2 = undefined;
+    context.data.skills.ultimateSkills.slot1 = undefined;
+    context.data.skills.ultimateSkills.slot2 = undefined;
+    context.data.skills.ultimateSkills.slot3 = undefined;
+    context.data.readySlot.slot1 = undefined;
+    context.data.readySlot.slot2 = undefined;
+    context.data.holsterSlot.slot1 = undefined;
+    context.data.holsterSlot.slot2 = undefined;
+    context.data.backpackSlot.slot1 = undefined;
+    context.data.backpackSlot.slot2 = undefined;
+
     for (let i of context.items)
     {
-      console.log(i);
-      console.log(context);
       i.img = i.img || DEFAULT_TOKEN;
       if (context.actor.data.type == 'survivor') 
       {
@@ -74,20 +86,20 @@ export class ZombiciderpgActorSheet extends ActorSheet {
         {
           if (i.data.assignedRank == 'basic') 
           {
-            context.data.skills.basicSkills.slot1 = i;
+            if (!context.data.skills.basicSkills.slot1) context.data.skills.basicSkills.slot1 = i;
           }
           else if (i.data.assignedRank == 'advanced') {
             if (!context.data.skills.advancedSkills.slot1) context.data.skills.advancedSkills.slot1 = i;
-            else context.data.skills.advancedSkills.slot2 = i;
+            else if (!context.data.skills.advancedSkills.slot2)context.data.skills.advancedSkills.slot2 = i;
           }
           else if (i.data.assignedRank == 'master') {
             if (!context.data.skills.masterSkills.slot1) context.data.skills.masterSkills.slot1 = i;
-            else context.data.skills.masterSkills.slot2 = i;
+            else if (!context.data.skills.masterSkills.slot2) context.data.skills.masterSkills.slot2 = i;
           }
           else if (i.data.assignedRank == 'ultimate') {
             if (!context.data.skills.ultimateSkills.slot1) context.data.skills.ultimateSkills.slot1 = i;
             else if (!context.data.skills.ultimateSkills.slot2) context.data.skills.ultimateSkills.slot2 = i;
-            else context.data.skills.ultimateSkills.slot3 = i;
+            else if (!context.data.skills.ultimateSkills.slot3) context.data.skills.ultimateSkills.slot3 = i;
           }
         }
         else if (i.type == 'weapon' || i.type == 'item')
@@ -109,7 +121,6 @@ export class ZombiciderpgActorSheet extends ActorSheet {
           }
         }
       }
-      console.log("===> ZombiciderpgActorSheet._prepareItems(context)")
     }
   }
 
@@ -137,7 +148,7 @@ export class ZombiciderpgActorSheet extends ActorSheet {
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
-      console.log(item);
+      //console.log(item);
       item.sheet.render(true);
     });
 
@@ -147,6 +158,16 @@ export class ZombiciderpgActorSheet extends ActorSheet {
 
     // Add Inventory Item
     html.find('.item-create').click(this._onItemCreate.bind(this));
+
+    html.find('.item-unassign').click(ev => {
+      console.log("Unassign");
+      const li = $(ev.currentTarget).parents(".item");
+      const itemId = li.data("itemId");
+      const item = this.actor.items.get(itemId);
+      console.log(item.data.data)
+      item.data.data.assignedRank = undefined;
+      this.render(false);
+    });
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
@@ -187,8 +208,16 @@ export class ZombiciderpgActorSheet extends ActorSheet {
 
     // Finally, create the item!
     return await Item.create(itemData, {parent: this.actor});
-  }  
-  
+  }
+
+
+  assignSkill(itemData, rank)
+  {
+    console.log("Choose " + rank);
+    itemData.data.assignedRank = rank;
+    return super._onDropItemCreate(itemData);
+  };
+
   /** @override */
   async _onDropItemCreate(itemData) {
     console.log(itemData);
@@ -199,53 +228,50 @@ export class ZombiciderpgActorSheet extends ActorSheet {
     {
       const actorSkills = this.actor.data.data.skills;
       console.log(actorSkills);
-      // on assigne au premier rang libre en fonction du rang de la skill
-      if (itemData.data.rank == 'basic')
-      {
-        if (!actorSkills.basicSkills.slot1) itemData.data.assignedRank = 'basic';
-        else if (!actorSkills.advancedSkills.slot1) itemData.data.assignedRank = 'advanced';
-        else if (!actorSkills.advancedSkills.slot2) itemData.data.assignedRank = 'advanced';
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-      }
-      if (itemData.data.rank == 'advanced')
-      {
-        if (!actorSkills.advancedSkills.slot1) itemData.data.assignedRank = 'advanced';
-        else if (!actorSkills.advancedSkills.slot2) itemData.data.assignedRank = 'advanced';
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-      }
-      if (itemData.data.rank == 'master')
-      {
-        if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
-        else if (!actorSkills.masterSkills.slot1) itemData.data.assignedRank = 'master';
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = "3";
-      }
-      if (itemData.data.rank == 'ultimate')
-      {
-        if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = 'ultimate';
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = 'ultimate';
-        else if (!actorSkills.ultimateSkills.slot1) itemData.data.assignedRank = 'ultimate';
-      }
+      new Dialog({
+        title: "New Skill : Choose rank",
+        content: "<p>Choose rank for this new skill: </p>",
+        buttons: {
+          basic: {
+            icon: '<i class="fas fa-check"></i>',
+            label: "Basic",
+            callback: () => this.assignSkill(itemData, "basic")
+          },
+          advanced: {
+            icon: '<i class="fas fa-check"></i>',
+            label: "Advanced",
+            callback: () => this.assignSkill(itemData, "advanced")
+          },
+          master: {
+            icon: '<i class="fas fa-check"></i>',
+            label: "Master",
+            callback: () => this.assignSkill(itemData, "master")
+          },
+          ultimate: {
+            icon: '<i class="fas fa-check"></i>',
+            label: "Ultimate",
+            callback: () => this.assignSkill(itemData, "ultimate")
+          },
+          cancel: {
+            icon: '<i class="fas fa-times"></i>',
+            callback: () => {}
+          }
+        }
+      }).render(true);
     }
 
     /* Weapon management */
     if (itemData.type == 'weapon')
-    {}
+    {
+      return super._onDropItemCreate(itemData);
+    }
 
     /* Item management */
     if (itemData.type == 'item')
-    {}
+    {
+      return super._onDropItemCreate(itemData);
+    }
 
     //itemData.data.assignedRank = item.data.rank;
-    return super._onDropItemCreate(itemData);
   }
 }

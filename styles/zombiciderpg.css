@@ -240,6 +240,10 @@
   /* Example style for Boilerplate (can be removed if not needed) */
 }
 
+.zombiciderpg .window-conte {
+  background: url("resources/background/background-3.jpg") repeat;
+}
+
 .zombiciderpg .item-form {
   font-family: "Roboto", sans-serif;
 }
@@ -521,8 +525,12 @@
   border-right: 1px solid #c9c7b8;
 }
 
-/* Encumbrance Bar */
-.encumbrance {
+.zombiciderpg .items-list .items-header .basic {
+  background: #b5b9e4;
+}
+
+/* Adrenaline Bar */
+.adrenaline {
   flex: 0 0 12px;
   background: #7a7971;
   margin: 1px 15px 0 1px;
@@ -530,7 +538,7 @@
   border-radius: 3px;
   position: relative;
 }
-.encumbrance .encumbrance-bar-blue {
+.adrenaline .adrenaline-bar-blue {
   position: absolute;
   top: 1px;
   left: 1px;
@@ -539,7 +547,7 @@
   border: 1px solid #cde4ff;
   border-radius: 2px;
 }
-.encumbrance .encumbrance-bar-yellow {
+.adrenaline .adrenaline-bar-yellow {
   position: absolute;
   top: 1px;
   left: 1px;
@@ -548,7 +556,7 @@
   border: 1px solid #cde4ff;
   border-radius: 2px;
 }
-.encumbrance .encumbrance-bar-orange {
+.adrenaline .adrenaline-bar-orange {
   position: absolute;
   top: 1px;
   left: 1px;
@@ -557,7 +565,7 @@
   border: 1px solid #cde4ff;
   border-radius: 2px;
 }
-.encumbrance .encumbrance-bar-red {
+.adrenaline .adrenaline-bar-red {
   position: absolute;
   top: 1px;
   left: 1px;
@@ -566,7 +574,7 @@
   border: 1px solid #cde4ff;
   border-radius: 2px;
 }
-.encumbrance .encumbrance-bar-black {
+.adrenaline .adrenaline-bar-black {
   position: absolute;
   top: 5px;
   left: 3px;
@@ -575,7 +583,7 @@
   border: 1px solid black;
   border-radius: 2px;
 }
-.encumbrance .encumbrance-label {
+.adrenaline .adrenaline-label {
   height: 10px;
   padding: 0 5px;
   position: absolute;
@@ -587,11 +595,11 @@
   color: #EEE;
   text-shadow: 0 0 5px #000;
 }
-.encumbrance .encumbrance-breakpoint {
+.adrenaline .adrenaline-breakpoint {
   display: block;
   position: absolute;
 }
-.encumbrance .mark {
+.adrenaline .mark {
   border-left: 2px solid rgb(0, 0, 0);
   border-right: 2px solid rgb(0, 0, 0);
   border-bottom: 8px solid rgb(0, 0, 0);

@@ -1,82 +1,154 @@
-<section class="grid grid-4col">
+<section class="grid grid-4col" style="flex-grow: 0;" >
     <ol class="items-list">
-        <li class="items-header">Basic</li>
-        <li class="item flexrow" data-item-id="{{data.skills.basicSkills.slot1._id}}">
+        <li class="items-header basic" style="background: #b5b9e4;">Basic</li>
+        <li class="item flexrow"data-item-id="{{data.skills.basicSkills.slot1._id}}">
             <div class="item-name flexrow">
                 <div class="item-image" style="background-image: url('{{data.skills.basicSkills.slot1.img}}')"></div>
                 <h4>
-                    {{data.skills.basicSkills.slot1.name}}
+                    <a class="item-edit" title="Edit">{{data.skills.basicSkills.slot1.name}}</a>
                 </h4>
             </div>
+            {{#if data.skills.basicSkills.slot1.name}}
+            <div class="item-controls flexrow"  style="flex-basis: 0px;flex-grow: 0; flex-shrink: 0;">
+                <a class="item-unassign" title='Unassign'><i class="fas fa-times"></i></a>
+            </div>
+            {{/if}}
         </li>
     </ol>
 
     <ol class="items-list">
-        <li class="items-header">Advanced</li>
+        <li class="items-header advanced" style="background: #e7e3a1;">Advanced</li>
         <li class="item flexrow" data-item-id="{{data.skills.advancedSkills.slot1._id}}">
             <div class="item-name flexrow">
                 <div class="item-image" style="background-image: url('{{data.skills.advancedSkills.slot1.img}}')"></div>
                 <h4>
-                    {{data.skills.advancedSkills.slot1.name}}
+                    <a class="item-edit" title="Edit">{{data.skills.advancedSkills.slot1.name}}</a>
                 </h4>
             </div>
+            {{#if data.skills.advancedSkills.slot1.name}}
+            <div class="item-controls flexrow"  style="flex-basis: 0px;flex-grow: 0; flex-shrink: 0;">
+                <a class="item-unassign" title='Unassign'><i class="fas fa-times"></i></a>
+            </div>
+            {{/if}}
         </li>
         <li class="item flexrow" data-item-id="{{data.skills.advancedSkills.slot2._id}}">
             <div class="item-name flexrow">
                 <div class="item-image" style="background-image: url('{{data.skills.advancedSkills.slot2.img}}')"></div>
                 <h4>
-                    {{data.skills.advancedSkills.slot2.name}}
+                    <a class="item-edit" title="Edit">{{data.skills.advancedSkills.slot2.name}}</a>
                 </h4>
             </div>
+            {{#if data.skills.advancedSkills.slot2.name}}
+            <div class="item-controls flexrow"  style="flex-basis: 0px;flex-grow: 0; flex-shrink: 0;">
+                <a class="item-unassign" title='Unassign'><i class="fas fa-times"></i></a>
+            </div>
+            {{/if}}
         </li>
     </ol>
 
     <ol class="items-list">
-        <li class="items-header">Master</li>
+        <li class="items-header master" style="background: #eec962;">Master</li>
         <li class="item flexrow" data-item-id="{{data.skills.masterSkills.slot1._id}}">
             <div class="item-name flexrow">
                 <div class="item-image" style="background-image: url('{{data.skills.masterSkills.slot1.img}}')"></div>
                 <h4>
-                    {{data.skills.masterSkills.slot1.name}}
+                    <a class="item-edit" title="Edit">{{data.skills.masterSkills.slot1.name}}</a>
                 </h4>
             </div>
+            {{#if data.skills.masterSkills.slot1.name}}
+            <div class="item-controls flexrow"  style="flex-basis: 0px;flex-grow: 0; flex-shrink: 0;">
+                <a class="item-unassign" title='Unassign'><i class="fas fa-times"></i></a>
+            </div>
+            {{/if}}
         </li>
         <li class="item flexrow" data-item-id="{{data.skills.masterSkills.slot2._id}}">
             <div class="item-name flexrow">
                 <div class="item-image" style="background-image: url('{{data.skills.masterSkills.slot2.img}}')"></div>
                 <h4>
-                    {{data.skills.masterSkills.slot2.name}}
+                    <a class="item-edit" title="Edit">{{data.skills.masterSkills.slot2.name}}</a>
                 </h4>
             </div>
+            {{#if data.skills.masterSkills.slot2.name}}
+            <div class="item-controls flexrow"  style="flex-basis: 0px;flex-grow: 0; flex-shrink: 0;">
+                <a class="item-unassign" title='Unassign'><i class="fas fa-times"></i></a>
+            </div>
+            {{/if}}
         </li>
     </ol>
 
     <ol class="items-list">
-        <li class="items-header">Ultimate</li>
+        <li class="items-header ultimate" style="background: #e95b5b;">Ultimate</li>
         <li class="item flexrow" data-item-id="{{data.skills.ultimateSkills.slot1._id}}">
             <div class="item-name flexrow">
                 <div class="item-image" style="background-image: url('{{data.skills.ultimateSkills.slot1.img}}')"></div>
                 <h4>
-                    {{data.skills.ultimateSkills.slot1.name}}
+                    <a class="item-edit" title="Edit">{{data.skills.ultimateSkills.slot1.name}}</a>
                 </h4>
             </div>
+            {{#if data.skills.ultimateSkills.slot1.name}}
+            <div class="item-controls flexrow"  style="flex-basis: 0px;flex-grow: 0; flex-shrink: 0;">
+                <a class="item-unassign" title='Unassign'><i class="fas fa-times"></i></a>
+            </div>
+            {{/if}}
         </li>
         <li class="item flexrow" data-item-id="{{data.skills.ultimateSkills.slot2._id}}">
             <div class="item-name flexrow">
                 <div class="item-image" style="background-image: url('{{data.skills.ultimateSkills.slot2.img}}')"></div>
                 <h4>
-                    {{data.skills.ultimateSkills.slot2.name}}
+                    <a class="item-edit" title="Edit">{{data.skills.ultimateSkills.slot2.name}}</a>
                 </h4>
             </div>
+            {{#if data.skills.ultimateSkills.slot2.name}}
+            <div class="item-controls flexrow"  style="flex-basis: 0px;flex-grow: 0; flex-shrink: 0;">
+                <a class="item-unassign" title='Unassign'><i class="fas fa-times"></i></a>
+            </div>
+            {{/if}}
         </li>
         <li class="item flexrow" data-item-id="{{data.skills.ultimateSkills.slot3._id}}">
             <div class="item-name flexrow">
                 <div class="item-image" style="background-image: url('{{data.skills.ultimateSkills.slot3.img}}')"></div>
                 <h4>
-                    {{data.skills.ultimateSkills.slot3.name}}
+                    <a class="item-edit" title="Edit">{{data.skills.ultimateSkills.slot3.name}}</a>
                 </h4>
             </div>
+            {{#if data.skills.ultimateSkills.slot3.name}}
+            <div class="item-controls flexrow"  style="flex-basis: 0px;flex-grow: 0; flex-shrink: 0;">
+                <a class="item-unassign" title='Unassign'><i class="fas fa-times"></i></a>
+            </div>
+            {{/if}}
         </li>
     </ol>
 </section>
+<ol class="items-list inventory-list">
+    <li class="items-header flexrow">
+        <h3 class="item-name flexrow">Unassigned Skills</h3>
+        <div class="skill-rank">Rank</div>
+        <div class="item-controls flexrow" style="justify-content: center;">Action</div>
+    </li>
+    <ol class="item-list">
+        {{#each actor.items as |item key|}}
+        {{#if item.data.data.isSkill}}
+            {{#if (isdefined item.data.data.assignedRank)}}
+            {{else}}
+                <li class="item flexrow" data-item-id="{{item.id}}">
+                    <div class="item-name flexrow">
+                    <div class="item-image" style="background-image: url('{{item.img}}')"></div>
+                    <h4>
+                        {{item.name}}
+                    </h4>
+                    </div>
+                    <div class="skill-rank">
+                        {{item.data.data.rank}}
+                    </div>
+                    <div class="item-controls flexrow">
+                    <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+                    <a class="item-control item-delete" title='Delete'><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/if}}
+        {{/if}}
+        {{/each}}
+    </ol>
+</ol>
+
 

@@ -59,3 +59,6 @@ Hooks.once("ready", function() {
   // include steps that need to happen after Foundry has fully loaded here.
 });
 
+Handlebars.registerHelper('isdefined', function (value) {
+  return value !== undefined;
+});
