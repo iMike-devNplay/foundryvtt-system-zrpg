@@ -60,5 +60,6 @@ Hooks.once("ready", function() {
 });
 
 Handlebars.registerHelper('isdefined', function (value) {
-  return value !== undefined;
+  console.log(value);
+  return (value !== undefined && value !== "");
 });

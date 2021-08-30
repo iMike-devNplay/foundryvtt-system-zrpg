@@ -30,6 +30,9 @@ export class ZombiciderpgActorSheet extends ActorSheet {
     context.data = actorData.data;
     context.flags = actorData.flags;
     
+    console.log("<=== ZombiciderpgActorSheet.getData()")
+    console.log(actorData);
+
     if (actorData.type == 'survivor') {
       this._prepareItems(context);
       this._prepareCharacterData(context);
@@ -47,8 +50,6 @@ export class ZombiciderpgActorSheet extends ActorSheet {
 
     // Prepare active effects
     //context.effects = prepareActiveEffectCategories(this.actor.effects);
-    console.log("<=== ZombiciderpgActorSheet.getData()")
-    console.log(actorData);
     console.log("===> ZombiciderpgActorSheet.getData()")
     return context;
   }
@@ -84,6 +85,7 @@ export class ZombiciderpgActorSheet extends ActorSheet {
       {
         if (i.type == 'skill') 
         {
+          console.log(i.data);
           if (i.data.assignedRank == 'basic') 
           {
             if (!context.data.skills.basicSkills.slot1) context.data.skills.basicSkills.slot1 = i;
@@ -165,7 +167,8 @@ export class ZombiciderpgActorSheet extends ActorSheet {
       const itemId = li.data("itemId");
       const item = this.actor.items.get(itemId);
       console.log(item.data.data)
-      item.data.data.assignedRank = undefined;
+      item.data.data.assignedRank = "";
+      console.log(item.data.data)
       this.render(false);
     });
 
@@ -254,7 +257,7 @@ export class ZombiciderpgActorSheet extends ActorSheet {
           },
           cancel: {
             icon: '<i class="fas fa-times"></i>',
-            callback: () => {}
+            callback: () => {return super._onDropItemCreate(itemData);}
           }
         }
       }).render(true);
