@@ -240,8 +240,8 @@
   /* Example style for Boilerplate (can be removed if not needed) */
 }
 
-.zombiciderpg .window-conte {
-  background: url("resources/background/background-3.jpg") repeat;
+.zombiciderpg .window-content {
+  background: transparent url("../resources/template/background-zc.jpeg") repeat center center;
 }
 
 .zombiciderpg .item-form {
@@ -604,4 +604,41 @@
   border-right: 2px solid rgb(0, 0, 0);
   border-bottom: 8px solid rgb(0, 0, 0);
   border-top: 8px solid rgb(0, 0, 0);
+}
+
+.zc-header {
+  display: grid;
+  justify-content: center;
+  background: transparent url('../resources/template/bg-header.png') no-repeat top center;
+  background-size: contain;
+}
+
+.zc-button, .zc-button-sm {
+  appearance: none;
+  color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  letter-spacing: -0.03em;
+  border: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  transition: background-size 30ms ease-out, transform 200ms ease-out;
+  background: #eebe4b url('../resources/template/bg-blood.png') no-repeat 97% 50%;
+  background-size: 0 auto;
+  transform: rotate(0deg);
+}
+.zc-button:hover, .zc-button-sm:hover {
+  background-size: 70px auto;
+  text-decoration: none;
+  transform: rotate(-7deg);
+}
+.zc-button-sm {
+  font-size: 0.8em;
+  letter-spacing: -0.01em;
+  padding: 5px 10px;
 }
