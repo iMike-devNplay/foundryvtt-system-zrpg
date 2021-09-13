@@ -6,7 +6,7 @@
   "templateVersion": 2,
   "author": "Michael Schneider",
   "minimumCoreVersion": "0.8.4",
-  "compatibleCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.9",
   "esmodules": ["module/zombiciderpg.mjs"],
   "styles": ["styles/zombiciderpg.css"],
   "scripts": [],
