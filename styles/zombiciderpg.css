@@ -640,5 +640,25 @@
 .zc-button-sm {
   font-size: 0.8em;
   letter-spacing: -0.01em;
-  padding: 5px 10px;
+  padding: 1px 10px;
+}
+
+.zc-skill-basic {
+  background: url('../resources/template/skill-basic.png') no-repeat;
+  background-size: contain;
+}
+
+.zc-skill-advanced {
+  background: url('../resources/template/skill-advanced.png') no-repeat;
+  background-size: contain;
+}
+
+.zc-skill-master {
+  background: url('../resources/template/skill-master.png') no-repeat;
+  background-size: contain;
+}
+
+.zc-skill-ultimate {
+  background: url('../resources/template/skill-ultimate.png') no-repeat;
+  background-size: contain;
 }

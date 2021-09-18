@@ -9,8 +9,8 @@ export class ZombiciderpgActorSheet extends ActorSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["zombiciderpg", "sheet", "actor"],
       template: "systems/zombiciderpg/templates/actor-sheet.html",
-      width: 720,
-      height: 750,
+      width: 820,
+      height: 630,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "actions"}]
     });
   }
