@@ -14,14 +14,10 @@
 	      <input type="text" name="data.adrenaline.value" value="{{data.adrenaline.value}}" data-dtype="Number"/>
       </div>
       {{#with data.adrenaline}}
-        <div class="adrenaline">
-            <span class="adrenaline-bar-red" style="width:{{percentRed}}%; position: relative;"></span>
-            <span class="adrenaline-bar-red" style="width:{{percentRed}}%"></span>
-            <span class="adrenaline-bar-orange" style="width:{{percentOrange}}%"></span>
-            <span class="adrenaline-bar-yellow" style="width:{{percentYellow}}%"></span>
-            <span class="adrenaline-bar-blue" style="width:{{percentBlue}}%"></span>
-            <span class="adrenaline-bar-black" style="width:{{percentValue}}%"></span>
-         </div>
+      <div class="zc-adrenaline">
+        <h1 style="color: transparent">ADRENALINE</h1>
+        <span class="zc-adrenaline-bar-black" style="width:{{percentValue}}%"></span>
+      </div>
       {{/with}}
 
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
