@@ -52,6 +52,6 @@
   "gridUnits": "m",
   "primaryTokenAttribute": "stress",
   "secondaryTokenAttribute": "hitPoints",
-  "url": "https://github.com/iMike-devNplay/zombiciderpg/",
+  "url": "https://github.com/iMike-devNplay/foundryvtt-system-zrpg/",
   "license": "LICENSE.txt"
 }
