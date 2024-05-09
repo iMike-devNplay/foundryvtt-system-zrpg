@@ -2,11 +2,16 @@
   "name": "zombiciderpg",
   "title": "Zombicide RPG : Chronicles",
   "description": "Le jeu de plateau zombicide transformé en jeu de rôle.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "templateVersion": 2,
-  "author": "Michael Schneider",
-  "minimumCoreVersion": "0.8.4",
-  "compatibleCoreVersion": "0.8.9",
+  "authors": [{
+      "name": "Michael Schneider",
+      "flags": {}
+    }],
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11.315"
+  },
   "esmodules": ["module/zombiciderpg.mjs"],
   "styles": ["styles/zombiciderpg.css"],
   "scripts": [],
@@ -14,26 +19,26 @@
     {
       "name": "zombipedia",
       "label": "Zombipedia",
-      "path": "packs/zombipedia.db",
-      "entity": "Actor"
+      "path": "packs/zombipedia",
+      "type": "Actor"
     },
     {
       "name": "weapons",
       "label": "Weapons",
-      "path": "packs/weapons.db",
-      "entity": "Item"
+      "path": "packs/weapons",
+      "type": "Item"
     },
     {
       "name": "skills",
       "label": "Skills",
-      "path": "packs/skills.db",
-      "entity": "Item"
+      "path": "packs/skills",
+      "type": "Item"
     },
     {
       "name": "rules",
       "label": "Rules",
-      "path": "./packs/rules.db",
-      "entity": "JournalEntry"
+      "path": "./packs/rules",
+      "type": "JournalEntry"
     }
   ],
   "languages": [
